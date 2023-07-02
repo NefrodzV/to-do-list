@@ -11,6 +11,7 @@ Basic todo list to practice the Single Resposibility Principle of the SOLID Prin
 * Setting the state of the task if its ongoing, completed, or pastdue.
 
 ## Built With 
-* Javascript
-* HTML5
+* Vanilla JS
+* HTML 5
 * CSS3
+* Webpack 5
