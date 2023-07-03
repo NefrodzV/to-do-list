@@ -17,13 +17,7 @@ export default function sidebarFactory() {
         let item = items[i];
         sideBarElement.appendChild(item.sidebarItemElement);
     }
-
     
-
-    
-
-    
-
     return {
         sideBarElement
     }
