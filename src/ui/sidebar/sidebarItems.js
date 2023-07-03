@@ -1,4 +1,6 @@
 import inboxPNG from '../../asset/icon-inbox.png';
+import upcomingPNG from '../../asset/icon-upcoming.png';
+import todayPNG from '../../asset/icon-today.png';
 
 function sidebarItemFactory(icon, title) {
     const STYLE = 'sidebar-item';
@@ -8,7 +10,7 @@ function sidebarItemFactory(icon, title) {
     sidebarItemElement.classList.add(STYLE);
 
     const itemIcon = new Image();
-    itemIcon.src = inboxPNG;
+    itemIcon.src = icon;
     
     const iconContainer = document.createElement('div');
     iconContainer.appendChild(itemIcon);
@@ -36,4 +38,9 @@ const sidebarItems = [];
 const inboxItem = sidebarItemFactory(inboxPNG, 'inbox');
 sidebarItems.push(inboxItem);
 
+const upcomingItem = sidebarItemFactory(upcomingPNG, 'upcoming');
+sidebarItems.push(upcomingItem);
+
+const todayItem = sidebarItemFactory(todayPNG, 'today');
+sidebarItems.push(todayItem);
 export default sidebarItems;
