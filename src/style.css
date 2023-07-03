@@ -41,4 +41,17 @@ main {
 footer {
     justify-content: center;
     align-items: center;
+    gap: 8px;
+}
+
+footer > a {
+    color: var(--secondary-color);
+}
+.icon-container {
+    height: 25px;
+    overflow: hidden;
+}
+.icon-container > img {
+    height: 100%;
+    
 }
