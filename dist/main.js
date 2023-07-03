@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\n    --primary-color: #020617;\n    --secondary-color: #f8fafc;\n    --accent-color: #64748b;\n    --primary-text-color: var(--primary--color);\n    --secondary-text-color: var(--secondary-color);\n    \n}\n\nbody {\n    margin: 0;\n    min-height: 100vh;\n    display: grid;\n    grid-template-columns: 25% auto;\n    grid-template-rows: 5rem auto 2rem;\n\n}\n\nheader, footer {\n    padding-left: 1vw;\n    background-color: var(--primary-color);\n    color: var(--secondary-text-color);\n    grid-column: 1 / 3;\n    display: flex;\n}\n\nheader {\n   \n}\n\nmain {\n    background-color: var(--secondary-color);\n}\n\n.sidebar {\n    background-color: var(--accent-color);\n    \n   \n}\n\nfooter {\n    justify-content: center;\n    align-items: center;\n    gap: 8px;\n}\n\nfooter > a {\n    color: var(--secondary-color);\n}\n.icon-container {\n    height: 25px;\n    overflow: hidden;\n}\n.icon-container > img {\n    height: 100%;\n    \n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-do-list/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\n    --primary-color: #020617;\n    --secondary-color: #f8fafc;\n    --accent-color: #64748b;\n    --primary-text-color: var(--primary--color);\n    --secondary-text-color: var(--secondary-color);\n     \n    --hover-color: hsl(231, 36%, 23%);\n    --item-background-color:#334155;\n    \n}\n\nbody {\n    margin: 0;\n    min-height: 100vh;\n    display: grid;\n    grid-template-columns: 25% auto;\n    grid-template-rows: 5rem auto 2rem;\n\n}\n\nheader, footer {\n    padding-left: 1vw;\n    background-color: var(--primary-color);\n    color: var(--secondary-text-color);\n    grid-column: 1 / 3;\n    display: flex;\n}\n\nheader {\n   align-items: center;\n}\n\nmain {\n    background-color: var(--secondary-color);\n}\n\n.sidebar {\n    padding: 1rem;\n    background-color: var(--accent-color);\n}\n\n.sidebar > h1 {\n    text-align: center;\n}\n\n.sidebar-item {\n    font-size: 2rem;\n    color: var(--primary-text-color);\n    background-color: var(--item-background-color);\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    gap: 1rem;\n    border: .25rem solid var(--primary-color);\n    padding: 1rem;\n    border-radius: 5px ;\n}\n.item-counter {\n    margin-left: auto;\n}\n.sidebar-item:hover {\n    background-color: var(--hover-color);\n}\n.sidebar-item-container {\n    height: 50px ;\n}\n\n.sidebar-item-container > img {\n    height: 100%;\n}\n\nfooter {\n    justify-content: center;\n    align-items: center;\n    gap: 8px;\n}\n\nfooter > a {\n    color: var(--secondary-color);\n}\n.icon-container {\n    height: 25px;\n    overflow: hidden;\n}\n.icon-container > img {\n    height: 100%;\n    \n}\n\n/* HELPER CLASSES */\n\n.title {\n\n}\n\n.uppercase {\n    text-transform: uppercase;\n}\n\n/* RESET */\n\nh1, h2, h3 {\n    margin: 0;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-do-list/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -116,47 +116,57 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _views_footerFactory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/footerFactory */ \"./src/views/footerFactory.js\");\n/* harmony import */ var _views_headerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/headerFactory */ \"./src/views/headerFactory.js\");\n/* harmony import */ var _views_mainFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/mainFactory */ \"./src/views/mainFactory.js\");\n/* harmony import */ var _views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/sideBarFactory */ \"./src/views/sideBarFactory.js\");\n\n\n\n\n\n\nconst header = (0,_views_headerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nconst sideBar = (0,_views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nconst main = (0,_views_mainFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst footer = (0,_views_footerFactory__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\ndocument.body.appendChild(header.headerElement);\ndocument.body.appendChild(sideBar.sideBarElement);\ndocument.body.appendChild(main.mainElement);\ndocument.body.appendChild(footer.footerElement);\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _ui_footerFactory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/footerFactory */ \"./src/ui/footerFactory.js\");\n/* harmony import */ var _ui_headerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/headerFactory */ \"./src/ui/headerFactory.js\");\n/* harmony import */ var _ui_mainFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/mainFactory */ \"./src/ui/mainFactory.js\");\n/* harmony import */ var _ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/sidebar/sidebarFactory */ \"./src/ui/sidebar/sidebarFactory.js\");\n\n\n\n\n\n\nconst header = (0,_ui_headerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nconst sideBar = (0,_ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nconst main = (0,_ui_mainFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst footer = (0,_ui_footerFactory__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\ndocument.body.appendChild(header.headerElement);\ndocument.body.appendChild(sideBar.sideBarElement);\ndocument.body.appendChild(main.mainElement);\ndocument.body.appendChild(footer.footerElement);\n\n\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/views/footerFactory.js":
-/*!************************************!*\
-  !*** ./src/views/footerFactory.js ***!
-  \************************************/
+/***/ "./src/ui/footerFactory.js":
+/*!*********************************!*\
+  !*** ./src/ui/footerFactory.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ footerFactory)\n/* harmony export */ });\n/* harmony import */ var _asset_icon_discord_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../asset/icon-discord.png */ \"./src/asset/icon-discord.png\");\n\n\nfunction footerFactory() {\n    const footerElement = document.createElement('footer');\n\n    const footerText = document.createElement('p');\n    footerText.textContent = \"Created by Nefrodzv\";\n\n    const footerAnchor = document.createElement('a')\n    footerAnchor.href = 'https://github.com/NefrodzV/to-do-list';\n\n    const iconContainer = document.createElement('div');\n    iconContainer.classList.add('icon-container');\n\n    const icon = new Image();\n    icon.src = _asset_icon_discord_png__WEBPACK_IMPORTED_MODULE_0__;\n\n    iconContainer.appendChild(icon)\n    footerAnchor.appendChild(iconContainer);\n    \n\n    footerElement.append(footerText, footerAnchor);\n\n    return {\n        footerElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/footerFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ footerFactory)\n/* harmony export */ });\n/* harmony import */ var _asset_icon_discord_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../asset/icon-discord.png */ \"./src/asset/icon-discord.png\");\n\n\nfunction footerFactory() {\n    const footerElement = document.createElement('footer');\n\n    const footerText = document.createElement('p');\n    footerText.textContent = \"Created by Nefrodzv\";\n\n    const footerAnchor = document.createElement('a');\n    footerAnchor.href = 'https://github.com/NefrodzV/to-do-list';\n\n    const iconContainer = document.createElement('div');\n    iconContainer.classList.add('icon-container');\n\n    const icon = new Image();\n    icon.src = _asset_icon_discord_png__WEBPACK_IMPORTED_MODULE_0__;\n\n    iconContainer.appendChild(icon)\n    footerAnchor.appendChild(iconContainer);\n    \n\n    footerElement.append(footerText, footerAnchor);\n\n    return {\n        footerElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/footerFactory.js?");
 
 /***/ }),
 
-/***/ "./src/views/headerFactory.js":
-/*!************************************!*\
-  !*** ./src/views/headerFactory.js ***!
-  \************************************/
+/***/ "./src/ui/headerFactory.js":
+/*!*********************************!*\
+  !*** ./src/ui/headerFactory.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ headerFactory)\n/* harmony export */ });\n\n\n\nfunction headerFactory() {\n\n    const headerElement = document.createElement('header');\n\n    const title = document.createElement('h1');\n    title.textContent = \"Todo List\"\n    \n    headerElement.appendChild(title);\n    return {\n        headerElement\n    }\n}\n\n\n//# sourceURL=webpack://to-do-list/./src/views/headerFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ headerFactory)\n/* harmony export */ });\nfunction headerFactory() {\n\n    const headerElement = document.createElement('header');\n\n    const title = document.createElement('h1');\n    title.textContent = \"Todo List\";\n    title.classList.add('uppercase');\n\n    \n    headerElement.appendChild(title);\n    return {\n        headerElement\n    }\n}\n\n\n//# sourceURL=webpack://to-do-list/./src/ui/headerFactory.js?");
 
 /***/ }),
 
-/***/ "./src/views/mainFactory.js":
-/*!**********************************!*\
-  !*** ./src/views/mainFactory.js ***!
-  \**********************************/
+/***/ "./src/ui/mainFactory.js":
+/*!*******************************!*\
+  !*** ./src/ui/mainFactory.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ mainFactory)\n/* harmony export */ });\nfunction mainFactory() {\n\n    const mainElement = document.createElement('main');\n\n    return {\n        mainElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/mainFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ mainFactory)\n/* harmony export */ });\nfunction mainFactory() {\n\n    const mainElement = document.createElement('main');\n\n    return {\n        mainElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/mainFactory.js?");
 
 /***/ }),
 
-/***/ "./src/views/sideBarFactory.js":
-/*!*************************************!*\
-  !*** ./src/views/sideBarFactory.js ***!
-  \*************************************/
+/***/ "./src/ui/sidebar/sidebarFactory.js":
+/*!******************************************!*\
+  !*** ./src/ui/sidebar/sidebarFactory.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarFactory)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n\nfunction sidebarFactory() {\n    \n    const sideBarElement = document.createElement('div');\n    sideBarElement.classList.add('sidebar');\n\n    return {\n        sideBarElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/sideBarFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarFactory)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../style.css */ \"./src/style.css\");\n/* harmony import */ var _asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../asset/icon-inbox.png */ \"./src/asset/icon-inbox.png\");\n/* harmony import */ var _sidebarItems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebarItems */ \"./src/ui/sidebar/sidebarItems.js\");\n\n\n\nfunction sidebarFactory() {\n    \n    const sideBarElement = document.createElement('div');\n    sideBarElement.classList.add('sidebar');\n\n    const title = document.createElement('h2');\n    title.textContent = \"Projects\";\n    title.classList.add('uppercase');\n    sideBarElement.appendChild(title);\n    \n    const items = _sidebarItems__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\n    \n    for(let i = 0; i < items.length; i++) {\n        let item = items[i];\n        sideBarElement.appendChild(item.sidebarItemElement);\n    }\n\n    \n\n    \n\n    \n\n    return {\n        sideBarElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sidebarFactory.js?");
+
+/***/ }),
+
+/***/ "./src/ui/sidebar/sidebarItems.js":
+/*!****************************************!*\
+  !*** ./src/ui/sidebar/sidebarItems.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../asset/icon-inbox.png */ \"./src/asset/icon-inbox.png\");\n\n\nfunction sidebarItemFactory(icon, title) {\n    const STYLE = 'sidebar-item';\n    const ICON_CONTAINER_STYLE = 'sidebar-item-container';\n\n    const sidebarItemElement = document.createElement('div');\n    sidebarItemElement.classList.add(STYLE);\n\n    const itemIcon = new Image();\n    itemIcon.src = _asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__;\n    \n    const iconContainer = document.createElement('div');\n    iconContainer.appendChild(itemIcon);\n    iconContainer.classList.add(ICON_CONTAINER_STYLE);\n\n    const titleElement = document.createElement('h3');\n    titleElement.textContent = title;\n    titleElement.classList.add('uppercase');\n\n    \n\n    const itemCounterElement = document.createElement('h3');\n    itemCounterElement.textContent = 23;\n    itemCounterElement.classList.add('item-counter');\n\n    sidebarItemElement.append(iconContainer, titleElement, itemCounterElement)\n    \n    return {\n        sidebarItemElement\n    }\n}\n\nconst sidebarItems = [];\n\nconst inboxItem = sidebarItemFactory(_asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__, 'inbox');\nsidebarItems.push(inboxItem);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sidebarItems);\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sidebarItems.js?");
 
 /***/ }),
 
@@ -167,6 +177,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"9d66702162f005cdbd06.png\";\n\n//# sourceURL=webpack://to-do-list/./src/asset/icon-discord.png?");
+
+/***/ }),
+
+/***/ "./src/asset/icon-inbox.png":
+/*!**********************************!*\
+  !*** ./src/asset/icon-inbox.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"018374295f0bf6cd047a.png\";\n\n//# sourceURL=webpack://to-do-list/./src/asset/icon-inbox.png?");
 
 /***/ })
 

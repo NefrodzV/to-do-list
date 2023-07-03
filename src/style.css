@@ -4,6 +4,9 @@
     --accent-color: #64748b;
     --primary-text-color: var(--primary--color);
     --secondary-text-color: var(--secondary-color);
+     
+    --hover-color: hsl(231, 36%, 23%);
+    --item-background-color:#334155;
     
 }
 
@@ -25,7 +28,7 @@ header, footer {
 }
 
 header {
-   
+   align-items: center;
 }
 
 main {
@@ -33,9 +36,38 @@ main {
 }
 
 .sidebar {
+    padding: 1rem;
     background-color: var(--accent-color);
-    
-   
+}
+
+.sidebar > h1 {
+    text-align: center;
+}
+
+.sidebar-item {
+    font-size: 2rem;
+    color: var(--primary-text-color);
+    background-color: var(--item-background-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: .25rem solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 5px ;
+}
+.item-counter {
+    margin-left: auto;
+}
+.sidebar-item:hover {
+    background-color: var(--hover-color);
+}
+.sidebar-item-container {
+    height: 50px ;
+}
+
+.sidebar-item-container > img {
+    height: 100%;
 }
 
 footer {
@@ -54,4 +86,20 @@ footer > a {
 .icon-container > img {
     height: 100%;
     
+}
+
+/* HELPER CLASSES */
+
+.title {
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* RESET */
+
+h1, h2, h3 {
+    margin: 0;
 }

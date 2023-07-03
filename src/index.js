@@ -1,8 +1,8 @@
 import  './style.css';
-import footerFactory from './views/footerFactory';
-import headerFactory from './views/headerFactory';
-import mainFactory from './views/mainFactory';
-import sidebarFactory from './views/sideBarFactory';
+import footerFactory from './ui/footerFactory';
+import headerFactory from './ui/headerFactory';
+import mainFactory from './ui/mainFactory';
+import sidebarFactory from './ui/sidebar/sidebarFactory';
 
 const header = headerFactory();
 const sideBar = sidebarFactory();
@@ -14,3 +14,5 @@ document.body.appendChild(header.headerElement);
 document.body.appendChild(sideBar.sideBarElement);
 document.body.appendChild(main.mainElement);
 document.body.appendChild(footer.footerElement);
+
+
