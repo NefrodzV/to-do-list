@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `body {\n    min-height: 100vh;\n    display: grid;\n    grid-template-columns: 25% auto;\n    grid-template-rows: 3rem auto 2rem;\n\n}\nheader, footer {\n    grid-column: 1 / 3\n}\nheader {\n    height: 3rem;\n    color: white;\n    background-color: black;\n   \n}\n\nmain {\n    background-color: red;\n}\n\n.sidebar {\n    background-color: blue;\n    \n   \n}\n\nfooter {\n    background-color:  yellow;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-do-list/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, `:root {\n    --primary-color: #020617;\n    --secondary-color: #f8fafc;\n    --accent-color: #64748b;\n    --primary-text-color: var(--primary--color);\n    --secondary-text-color: var(--secondary-color);\n    \n}\n\nbody {\n    margin: 0;\n    min-height: 100vh;\n    display: grid;\n    grid-template-columns: 25% auto;\n    grid-template-rows: 5rem auto 2rem;\n\n}\n\nheader, footer {\n    padding-left: 1vw;\n    background-color: var(--primary-color);\n    color: var(--secondary-text-color);\n    grid-column: 1 / 3;\n    display: flex;\n}\n\nheader {\n   \n}\n\nmain {\n    background-color: var(--secondary-color);\n}\n\n.sidebar {\n    background-color: var(--accent-color);\n    \n   \n}\n\nfooter {\n    justify-content: center;\n    align-items: center;\n}`, \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-do-list/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -110,33 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
-/***/ "./src/ElementWriter.js":
-/*!******************************!*\
-  !*** ./src/ElementWriter.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ElementWriter)\n/* harmony export */ });\nclass ElementWriter {\n    constructor(){\n\n    }\n\n    static write(element, text) {\n        element.textContent = text;\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ElementWriter.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _views_footerElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/footerElement */ \"./src/views/footerElement.js\");\n/* harmony import */ var _views_headerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/headerFactory */ \"./src/views/headerFactory.js\");\n/* harmony import */ var _views_mainFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/mainFactory */ \"./src/views/mainFactory.js\");\n/* harmony import */ var _views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/sideBarFactory */ \"./src/views/sideBarFactory.js\");\n\n\n\n\n\n\n\n\n\nconst header = (0,_views_headerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nconst sideBar = (0,_views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nconst main = (0,_views_mainFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst footer = (0,_views_footerElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\ndocument.body.appendChild(header.headerElement);\ndocument.body.appendChild(sideBar.sideBarElement);\ndocument.body.appendChild(main.mainElement);\ndocument.body.appendChild(footer.footerElement);\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _views_footerFactory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/footerFactory */ \"./src/views/footerFactory.js\");\n/* harmony import */ var _views_headerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/headerFactory */ \"./src/views/headerFactory.js\");\n/* harmony import */ var _views_mainFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/mainFactory */ \"./src/views/mainFactory.js\");\n/* harmony import */ var _views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/sideBarFactory */ \"./src/views/sideBarFactory.js\");\n\n\n\n\n\n\nconst header = (0,_views_headerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nconst sideBar = (0,_views_sideBarFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nconst main = (0,_views_mainFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst footer = (0,_views_footerFactory__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\ndocument.body.appendChild(header.headerElement);\ndocument.body.appendChild(sideBar.sideBarElement);\ndocument.body.appendChild(main.mainElement);\ndocument.body.appendChild(footer.footerElement);\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/views/footerElement.js":
+/***/ "./src/views/footerFactory.js":
 /*!************************************!*\
-  !*** ./src/views/footerElement.js ***!
+  !*** ./src/views/footerFactory.js ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ footerFactory)\n/* harmony export */ });\nfunction footerFactory() {\n    const footerElement = document.createElement('footer');\n\n    return {\n        footerElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/footerElement.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ footerFactory)\n/* harmony export */ });\nfunction footerFactory() {\n    const footerElement = document.createElement('footer');\n\n    return {\n        footerElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/footerFactory.js?");
 
 /***/ }),
 
@@ -146,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ headerFactory)\n/* harmony export */ });\n/* harmony import */ var _ElementWriter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ElementWriter */ \"./src/ElementWriter.js\");\n\n\n\nfunction headerFactory() {\n\n    const headerElement = document.createElement('header');\n    \n    _ElementWriter__WEBPACK_IMPORTED_MODULE_0__[\"default\"].write(headerElement, 'Todo List')\n\n    return {\n        headerElement\n    }\n}\n\nfunction cardFactory(title, description) {\n    const cardElement = document.createElement('div');\n    cardElement.textContent = title;\n\n    return {\n        cardElement,\n        title,\n        description\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/headerFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ headerFactory)\n/* harmony export */ });\n\n\n\nfunction headerFactory() {\n\n    const headerElement = document.createElement('header');\n\n    const title = document.createElement('h1');\n    title.textContent = \"Todo List\"\n    \n    headerElement.appendChild(title);\n    return {\n        headerElement\n    }\n}\n\n\n//# sourceURL=webpack://to-do-list/./src/views/headerFactory.js?");
 
 /***/ }),
 
@@ -166,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarFactory)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n\nfunction sidebarFactory() {\n    const sideBarElement = document.createElement('div');\n    sideBarElement.classList.add('sidebar');\n\n    return {\n        sideBarElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/sideBarFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarFactory)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../style.css */ \"./src/style.css\");\n\nfunction sidebarFactory() {\n    \n    const sideBarElement = document.createElement('div');\n    sideBarElement.classList.add('sidebar');\n\n    return {\n        sideBarElement\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/views/sideBarFactory.js?");
 
 /***/ })
 
