@@ -37,6 +37,7 @@ main {
 }
 
 .sidebar {
+
     padding: 1rem;
     background-color: var(--sidebar-color);
 }
@@ -60,6 +61,7 @@ main {
     padding: 1rem;
     border-radius: 5px ;
 }
+
 .sidebar-item:hover {
     border: .25rem solid var(--primary-color)
 }
@@ -95,10 +97,6 @@ footer > a {
 }
 
 /* HELPER CLASSES */
-
-.title {
-
-}
 
 .uppercase {
     text-transform: uppercase;
