@@ -1,8 +1,5 @@
 import  './style.css';
-import footerFactory from './views/footerElement';
-
-
-
+import footerFactory from './views/footerFactory';
 import headerFactory from './views/headerFactory';
 import mainFactory from './views/mainFactory';
 import sidebarFactory from './views/sideBarFactory';
