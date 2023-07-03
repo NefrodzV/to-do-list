@@ -1,7 +1,30 @@
 body {
+    min-height: 100vh;
     display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 3rem auto 2rem;
+
+}
+header, footer {
+    grid-column: 1 / 3
 }
 header {
+    height: 3rem;
     color: white;
     background-color: black;
+   
+}
+
+main {
+    background-color: red;
+}
+
+.sidebar {
+    background-color: blue;
+    
+   
+}
+
+footer {
+    background-color:  yellow;
 }
