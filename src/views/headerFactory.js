@@ -11,14 +11,3 @@ export default function headerFactory() {
         headerElement
     }
 }
-
-function cardFactory(title, description) {
-    const cardElement = document.createElement('div');
-    cardElement.textContent = title;
-
-    return {
-        cardElement,
-        title,
-        description
-    }
-}
