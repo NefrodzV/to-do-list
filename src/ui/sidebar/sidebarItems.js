@@ -43,4 +43,5 @@ sidebarItems.push(upcomingItem);
 
 const todayItem = sidebarItemFactory(todayPNG, 'today');
 sidebarItems.push(todayItem);
+
 export default sidebarItems;
