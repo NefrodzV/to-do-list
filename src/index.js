@@ -1,3 +1,4 @@
+import event from './events';
 import  './style.css';
 import footerFactory from './ui/footerFactory';
 import headerFactory from './ui/headerFactory';
@@ -9,9 +10,6 @@ const header = headerFactory();
 const sideBar = sidebarFactory();
 const main = mainFactory();
 const footer = footerFactory();
-
-const layer = layerFactory();
-
 
 document.body.appendChild(header);
 document.body.appendChild(sideBar);
