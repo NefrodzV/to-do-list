@@ -19,7 +19,7 @@ body {
     grid-template-rows: 5rem auto 2rem;
 
 }
-
+/* Header */
 header, footer {
     background-color: var(--primary-color);
     color: var(--secondary-text-color);
@@ -39,10 +39,9 @@ header {
 .logo-container > img {
     height: 100%;
 }
-main {
-    background-color: var(--secondary-color);
-}
 
+
+/* Sidebar */
 .sidebar {
 
     padding: 1rem;
@@ -73,10 +72,6 @@ main {
     border: .25rem solid var(--primary-color)
 }
 
-.item-counter {
-    margin-left: auto;
-}
-
 .sidebar-item-container {
     height: 40px ;
 }
@@ -85,6 +80,14 @@ main {
     height: 100%;
 }
 
+.item-counter {
+    margin-left: auto;
+}
+/* Main */
+main {
+    background-color: var(--secondary-color);
+}
+/* Footer */
 footer {
     justify-content: center;
     align-items: center;
