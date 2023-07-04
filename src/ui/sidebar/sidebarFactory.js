@@ -18,7 +18,7 @@ export default function sidebarFactory() {
         sideBarElement.appendChild(item.sidebarItemElement);
     }
     
-    return {
-        sideBarElement
-    }
+    
+    return sideBarElement;
+    
 }

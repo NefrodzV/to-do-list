@@ -21,7 +21,5 @@ export default function footerFactory() {
 
     footerElement.append(footerText, footerAnchor);
 
-    return {
-        footerElement
-    }
+    return footerElement;
 }
