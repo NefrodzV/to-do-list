@@ -15,7 +15,7 @@ export default function sidebarFactory() {
     
     for(let i = 0; i < items.length; i++) {
         let item = items[i];
-        sideBarElement.appendChild(item.sidebarItemElement);
+        sideBarElement.appendChild(item);
     }
     
     
