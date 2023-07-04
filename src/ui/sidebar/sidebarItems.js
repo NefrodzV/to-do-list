@@ -2,6 +2,7 @@ import inboxPNG from '../../asset/icon-inbox.png';
 import upcomingPNG from '../../asset/icon-upcoming.png';
 import todayPNG from '../../asset/icon-today.png';
 import addPGN from '../../asset/icon-add.png';
+import sidebarItemFlow from './sideBarItemFlow';
 
 function sidebarItemFactory(icon, title) {
     const STYLE = 'sidebar-item';
@@ -9,6 +10,11 @@ function sidebarItemFactory(icon, title) {
 
     const sidebarItemElement = document.createElement('div');
     sidebarItemElement.classList.add(STYLE);
+    sidebarItemElement.setAttribute('id', title);
+
+    sidebarItemElement.addEventListener('click', function(e) {
+            sidebarItemFlow(title);
+    });
 
     const itemIcon = new Image();
     itemIcon.src = icon;
@@ -25,8 +31,8 @@ function sidebarItemFactory(icon, title) {
     itemCounterElement.textContent = 23;
     itemCounterElement.classList.add('item-counter');
 
-    sidebarItemElement.append(iconContainer, titleElement, itemCounterElement)
-    
+    sidebarItemElement.append(iconContainer, titleElement, itemCounterElement);
+
     return sidebarItemElement;
 }
 
@@ -41,7 +47,7 @@ sidebarItems.push(upcomingItem);
 const todayItem = sidebarItemFactory(todayPNG, 'today');
 sidebarItems.push(todayItem);
 
-const addItem = sidebarItemFactory(addPGN, 'Create');
+const addItem = sidebarItemFactory(addPGN, 'create');
 sidebarItems.push(addItem);
 
 export default sidebarItems;
