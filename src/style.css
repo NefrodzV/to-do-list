@@ -113,7 +113,7 @@ footer > a {
 }
 
 .layer[visible]{
-    
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
