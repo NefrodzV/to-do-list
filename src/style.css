@@ -83,6 +83,7 @@ header {
 .item-counter {
     margin-left: auto;
 }
+
 /* Main */
 main {
     background-color: var(--secondary-color);
