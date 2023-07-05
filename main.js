@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./events */ \"./src/events.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _ui_footerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/footerFactory */ \"./src/ui/footerFactory.js\");\n/* harmony import */ var _ui_headerFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/headerFactory */ \"./src/ui/headerFactory.js\");\n/* harmony import */ var _ui_layerFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/layerFactory */ \"./src/ui/layerFactory.js\");\n/* harmony import */ var _ui_mainFactory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui/mainFactory */ \"./src/ui/mainFactory.js\");\n/* harmony import */ var _ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ui/sidebar/sidebarFactory */ \"./src/ui/sidebar/sidebarFactory.js\");\n\n\n\n\n\n\n\n\nconst header = (0,_ui_headerFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst sideBar = (0,_ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\nconst main = (0,_ui_mainFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nconst footer = (0,_ui_footerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\ndocument.body.appendChild(header);\ndocument.body.appendChild(sideBar);\ndocument.body.appendChild(main);\ndocument.body.appendChild(footer);\ndocument.body.appendChild(layer);\n\n\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./events */ \"./src/events.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _ui_footerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/footerFactory */ \"./src/ui/footerFactory.js\");\n/* harmony import */ var _ui_headerFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/headerFactory */ \"./src/ui/headerFactory.js\");\n/* harmony import */ var _ui_mainFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ui/mainFactory */ \"./src/ui/mainFactory.js\");\n/* harmony import */ var _ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ui/sidebar/sidebarFactory */ \"./src/ui/sidebar/sidebarFactory.js\");\n\n\n\n\n\n\n\nconst header = (0,_ui_headerFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\nconst sideBar = (0,_ui_sidebar_sidebarFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\nconst main = (0,_ui_mainFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nconst footer = (0,_ui_footerFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\ndocument.body.appendChild(header);\ndocument.body.appendChild(sideBar);\ndocument.body.appendChild(main);\ndocument.body.appendChild(footer);\n\n\n\n\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ }),
 
@@ -150,16 +150,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/ui/layerFactory.js":
-/*!********************************!*\
-  !*** ./src/ui/layerFactory.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ layerFactory)\n/* harmony export */ });\n/* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../events */ \"./src/events.js\");\n\n\nfunction layerFactory() {\n\n    const LAYER_STYLE = 'layer';\n\n    const layerElement = document.createElement('div');\n    layerElement.classList.add(LAYER_STYLE);\n\n    const toggleVisiibility = () => {\n        layerElement.toggleAttribute('visible');\n    }\n\n    _events__WEBPACK_IMPORTED_MODULE_0__[\"default\"].on('updateLayerVisibility', toggleVisiibility);\n\n    return layerElement; \n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/layerFactory.js?");
-
-/***/ }),
-
 /***/ "./src/ui/mainFactory.js":
 /*!*******************************!*\
   !*** ./src/ui/mainFactory.js ***!
@@ -176,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarItemFlow)\n/* harmony export */ });\n/* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../events */ \"./src/events.js\");\n/* harmony import */ var _layerFactory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layerFactory */ \"./src/ui/layerFactory.js\");\n\n\n\nfunction sidebarItemFlow(id) {\n\n    switch (id) {\n        case 'inbox':\n            \n            break;\n        case 'upcoming':\n\n            break;\n        case 'today':\n\n            break;\n        case 'create':\n            _events__WEBPACK_IMPORTED_MODULE_0__[\"default\"].emit('updateLayerVisibility');\n            break;\n    \n        default:\n            console.log('UH OH sidebar clicks error');\n            break;\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sideBarItemFlow.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarItemFlow)\n/* harmony export */ });\n/* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../events */ \"./src/events.js\");\n\n\n\nfunction sidebarItemFlow(id) {\n\n    switch (id) {\n        case 'inbox':\n            \n            break;\n        case 'upcoming':\n\n            break;\n        case 'today':\n\n            break;\n        case 'create':\n            _events__WEBPACK_IMPORTED_MODULE_0__[\"default\"].emit('updateLayerVisibility');\n            break;\n    \n        default:\n            console.log('UH OH sidebar clicks error');\n            break;\n    }\n}\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sideBarItemFlow.js?");
 
 /***/ }),
 
