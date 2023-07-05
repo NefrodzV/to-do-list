@@ -1,4 +1,4 @@
-import events from "../events";
+import events from "../../events";
 
 export default function layerFactory() {
 
@@ -7,11 +7,11 @@ export default function layerFactory() {
     const layerElement = document.createElement('div');
     layerElement.classList.add(LAYER_STYLE);
 
-    const toggleVisiibility = () => {
+    const toggleVisibility = () => {
         layerElement.toggleAttribute('visible');
     }
 
-    events.on('updateLayerVisibility', toggleVisiibility);
+    events.on('updateLayerVisibility', toggleVisibility);
 
     return layerElement; 
 }

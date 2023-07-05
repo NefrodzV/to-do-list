@@ -1,5 +1,5 @@
 import events from "../../events";
-import layerFactory from "../layerFactory";
+
 
 export default function sidebarItemFlow(id) {
 
