@@ -113,7 +113,9 @@ footer > a {
 }
 
 .layer[visible]{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -121,10 +123,111 @@ footer > a {
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
 }
+
+.layer-container {
+    /* border:2px solid var(--secondary-color); */
+    padding: 1rem;
+    background-color: var(--primary-color);
+    width: 400px;
+    
+}
+
+.layer-container > button {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    margin: 1% 1% 0 auto;
+    display: block;
+}
+
+::placeholder {
+    color: var(--accent-color);
+}
+
+.project-form {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.project-form > h1 {
+    color: var(--secondary-text-color);
+    margin-block-end: 3%;
+}
+
+.project-form > * {
+    margin-block: 3px;
+    
+}
+
+.project-form > div {
+    height: 10rem;
+    border:  2px solid var(--secondary-color);
+
+}
+
+.project-form > input {
+    font-size: 1.5rem;
+    display: block;
+    border: 3px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    outline: none;
+    color: var(--secondary-text-color)
+    
+
+}
+
+.project-form > input:focus {
+    border-color: var(--accent-color);
+}
+
+.project-form > input:invalid {
+    border-color: red;
+}
+
+.project-form > h2 {
+    color: var(--secondary-text-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-form > h2 > button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+
+
+.project-form > button {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    margin: 0 auto;
+    width: fit-content;
+}
+
+
+/* Legend {
+    height: 50%;
+    
+}
+
+legend > h2 {
+    display: flex;
+    justify-content: space-between;
+} */
+
+
 /* HELPER CLASSES */
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.corner {
+    border-radius: 5px;
 }
 
 /* RESET */
