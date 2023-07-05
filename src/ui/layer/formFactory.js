@@ -1,14 +1,20 @@
+
+
 export default function addProjectFormFactory() {
 
     const formContainer = document.createElement('div');
 
     const form = document.createElement('form');
+    form.classList.add('project-form');
 
-    const titleInput = createInput();
+  
+    const formTitle = document.createElement('h1');
+    formTitle.textContent = "REGISTER PROJECT";
+    const titleInput = createInput('TITLE');
 
-    const dueInput = createInput();
+    const dueInput = createInput('DUE DATE');
 
-    const descriptionInput = createInput();
+    const descriptionInput = createInput('DESCRIPTION');
 
     const addTodoButton = createButton('+ ADD TODO');
     const addImageContainer = document.createElement('div');
@@ -21,18 +27,18 @@ export default function addProjectFormFactory() {
     const submitButton = createButton('SUBMIT');
 
     todosTitle.append(addTodoButton);
-
-    form.append(titleInput, dueInput, descriptionInput, todosTitle, todosContainer, submitButton);
+    form.append(formTitle, titleInput, dueInput, descriptionInput, todosTitle, todosContainer, submitButton);
     formContainer.append(form);
 
-    const createInput = () => {
+    function createInput(placeHolderText) {
         const input = document.createElement('input');
+        input.placeholder = placeHolderText;
 
 
         return input;
     }
 
-    const createButton = (title) => {
+    function createButton(title) {
         const button = document.createElement('button');
         button.textContent = title;
 
