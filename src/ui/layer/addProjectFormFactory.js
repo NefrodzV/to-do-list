@@ -10,9 +10,9 @@ export default function addProjectFormFactory() {
   
     const formTitle = document.createElement('h1');
     formTitle.textContent = "REGISTER PROJECT";
-    const titleInput = createInput('TITLE');
+    const titleInput = createInput('TITLE', 'text', 'title');
 
-    const dueInput = createInput('DUE DATE');
+    const dateInput = createInput('DUE DATE', 'date', 'date');
 
     const descriptionInput = createInput('DESCRIPTION');
 
@@ -27,13 +27,14 @@ export default function addProjectFormFactory() {
     const submitButton = createButton('SUBMIT');
 
     todosTitle.append(addTodoButton);
-    form.append(formTitle, titleInput, dueInput, descriptionInput, todosTitle, todosContainer, submitButton);
+    form.append(formTitle, titleInput, dateInput, descriptionInput, todosTitle, todosContainer, submitButton);
     formContainer.append(form);
 
-    function createInput(placeHolderText) {
+    function createInput(placeHolderText, inputType, inputName) {
         const input = document.createElement('input');
         input.placeholder = placeHolderText;
-
+        input.type = inputType;
+        input.name = inputName;
 
         return input;
     }

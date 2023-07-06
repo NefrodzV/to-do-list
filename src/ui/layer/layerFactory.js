@@ -1,5 +1,5 @@
 import events from "../../events";
-import addProjectFormFactory from "./formFactory";
+import addProjectFormFactory from "./addProjectFormFactory";
 
 export default function layerFactory() {
 
