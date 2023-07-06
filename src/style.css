@@ -11,6 +11,8 @@
     --sidebar-color:#94a3b8;
 }
 
+
+
 body {
     position: relative;
     margin: 0;
@@ -147,11 +149,7 @@ footer > a {
 }
 
 
-/* .input[type='date']::webkit-calendar-picker-indicator {
-    color: var(--secondary-text-color);
-    opacity: 1;
-    background-image: url('./asset/icon-calendar.png');
-} */
+
 .project-form {
     width: 100%;
     height: 100%;
@@ -164,6 +162,9 @@ footer > a {
     color: var(--secondary-text-color);
     margin-block-end: 3%;
 }
+.project-form > h2 {
+    text-transform:uppercase;
+}
 
 .project-form > * {
     margin-block: 3px;
@@ -171,24 +172,21 @@ footer > a {
 }
 
 .project-form > div {
+    background-color: var(--secondary-color);
     height: 10rem;
     border:  2px solid var(--secondary-color);
 
 }
 
-.project-form > input {
-   
-    font-size: 1.5rem;
-    display: block;
-    border: 3px solid var(--secondary-color);
-    background-color: var(--primary-color);
-    outline: none;
-    color: var(--secondary-text-color)
-    
-
+input, textarea {
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+    outline-color: var(--accent-color);
 }
 
 ::-webkit-calendar-picker-indicator {
+   
     background-image:  url('./asset/icon-calendar.png');
 }
 
