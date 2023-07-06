@@ -1,5 +1,6 @@
 import events from "../../events";
 import addProjectFormFactory from "./addProjectFormFactory";
+import addTodosFactory from "./addTodosFactory";
 
 export default function layerFactory() {
 
@@ -20,7 +21,8 @@ export default function layerFactory() {
     container.classList.add(CONTAINER_STYLE);
     container.classList.add('corner');
 
-    const form = addProjectFormFactory();
+    // Need to change this dynamically with a nav
+    const form = addTodosFactory();
     
     toggleVisibility();
     const updateContainerElements = () => {
