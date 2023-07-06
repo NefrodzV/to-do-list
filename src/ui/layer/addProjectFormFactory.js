@@ -2,32 +2,41 @@
 
 export default function addProjectFormFactory() {
 
-    const formContainer = document.createElement('div');
-
     const form = document.createElement('form');
     form.classList.add('project-form');
 
-  
     const formTitle = document.createElement('h1');
     formTitle.textContent = "REGISTER PROJECT";
-    const titleInput = createInput('TITLE', 'text', 'title');
+
+    const title = document.createElement('h2');
+    title.textContent = 'PROJECT DETAILS'
+
+    const titleInput = createInput('Project Title ', 'text', 'title');
 
     const dateInput = createInput('DUE DATE', 'date', 'date');
 
-    const descriptionInput = createInput('DESCRIPTION');
+    const descriptionInput = createTextarea(50, 4);
 
     const addTodoButton = createButton('+ ADD TODO');
-    const addImageContainer = document.createElement('div');
-
+    
     const todosTitle = document.createElement('h2');
-    todosTitle.textContent  = 'TODOS';
+    todosTitle.textContent  = 'Register Todos';
 
+    const todoTitleInput = createInput('TODOS Title','text', 'todoTitle');
+
+    const todoDateInput = createInput('Due date', 'date', 'todoDate');
+
+    const todoDescription = document.createElement('textarea');
+    todoDescription.rows = 4;
+    todoDescription.columns = 50;
+    
     const todosContainer = document.createElement('div');
 
-    const submitButton = createButton('SUBMIT');
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit';
 
     todosTitle.append(addTodoButton);
-    form.append(formTitle, titleInput, dateInput, descriptionInput, todosTitle, todosContainer, submitButton);
+    form.append(formTitle, title, titleInput, dateInput, descriptionInput, todosTitle, todoTitleInput, todoDateInput, todoDescription, todosContainer, submitButton);
     formContainer.append(form);
 
     function createInput(placeHolderText, inputType, inputName) {
@@ -35,17 +44,24 @@ export default function addProjectFormFactory() {
         input.placeholder = placeHolderText;
         input.type = inputType;
         input.name = inputName;
-
         return input;
     }
 
     function createButton(title) {
         const button = document.createElement('button');
         button.textContent = title;
-
         return button;
     }
 
+    function createTextarea(col, row) {
+        const textarea = document.createElement('textarea');
+        textarea.columns = col;
+        textarea.rows = row;
+        textarea.placeholder = 'Write a description of what you are doing';
+        return textarea;
+    }
+
+    
     return form;
 
 }
