@@ -8,14 +8,17 @@ export default function formNavFactory() {
     navList.classList.add('form-nav');
     navigation.appendChild(navList);
     
-    
-    const todoItem = formNavItemFactory('TODO');
-    const projectItem = formNavItemFactory('PROJECT');
+    const todoItem = formNavItemFactory('REGISTER TODO');
+    todoItem.toggleSelectedAttr();
+
+    const projectItem = formNavItemFactory('REGISTER PROJECT');
+
     events.on('updateFormNav', function() {
-        todoItem.removeAttribute('selected') ;
-        projectItem.removeAttribute('selected');
-    })
-    navList.append(todoItem, projectItem);
+        todoItem.disableSelectedAttr()
+        projectItem.disableSelectedAttr();
+    });
+
+    navList.append(todoItem.item, projectItem.item);
 
     return navigation;
 }
@@ -24,14 +27,31 @@ function formNavItemFactory(text) {
     const item = document.createElement('li');
     item.textContent = text;
 
-    const toggleSelectAttr = () => {
+    const toggleSelectedAttr = () => {
         item.toggleAttribute('selected');
     }
 
     item.addEventListener('click', () => {
+        if(itemIsSelected()) {
+            console.log(text + "item is already selected");
+            return;
+        }
         events.emit('updateFormNav');
-        toggleSelectAttr()
-    })
+        toggleSelectedAttr()
+        events.emit('updateForm', text);
+    });
+
+    const disableSelectedAttr = () => {
+        item.removeAttribute('selected');
+    }
+
+    const itemIsSelected = () => {
+        return item.hasAttribute('selected');
+    }
     
-    return item;
+    return {
+        item, 
+        toggleSelectedAttr,
+        disableSelectedAttr
+    };
 }

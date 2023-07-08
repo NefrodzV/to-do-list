@@ -11,7 +11,6 @@ export default function layerFactory() {
     const layerElement = document.createElement('div');
     layerElement.classList.add(LAYER_STYLE);
 
-    
     const toggleVisibility = () => {layerElement.toggleAttribute('visible');}
 
     const closeButton = document.createElement('button');
@@ -25,13 +24,25 @@ export default function layerFactory() {
     container.classList.add('corner');
 
     // Need to change this dynamically with a nav
-    const form = addProjectFormFactory();
+    let form = addTodosFactory();
     
+    events.on('updateForm', function(target) {
+        console.log("menu item clicked is " + target)
+        form.remove();
+        switch(target) {
+            case 'REGISTER TODO':
+                form = addTodosFactory();
+                container.appendChild(form);
+                break;
+            case 'REGISTER PROJECT':
+                form = addProjectFormFactory();
+                container.appendChild(form);
+                break;
+            default:
+                console.log("FORM UPDATE ERROR");
+        }
+    })
     
-    
-
-    
-
     container.appendChild(closeButton);
     container.append(navigation)
     container.appendChild(form);
