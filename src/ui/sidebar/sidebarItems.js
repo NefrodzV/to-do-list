@@ -29,7 +29,7 @@ function sidebarItemFactory(icon, title) {
 
     
 
-    sidebarItemElement.append(iconContainer, titleElement, );
+    sidebarItemElement.append(iconContainer, titleElement);
 
     return sidebarItemElement;
 }
