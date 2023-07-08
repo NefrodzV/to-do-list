@@ -157,6 +157,7 @@ footer > a {
     list-style: none;
     color: var(--secondary-text-color);
     display: flex;
+    justify-content: space-evenly;
     gap: 8px;
 }
 
