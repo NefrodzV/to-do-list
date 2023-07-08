@@ -9,9 +9,13 @@ export default function addTodosFactory() {
     const addTodoButton = document.createElement('button');
     addTodoButton.textContent = '+ ADD TODO';
 
-    const todoTitleInput = createInput('Title','text', 'todoTitle');
-
-    const todoDateInput = createInput('Date', 'date', 'todoDate');
+    // Need to to validate the inputs when submitting this makes the inoput always red
+    // need to make it only required when incorrectly made the submition with wrong data input
+    const todoTitleInput = createInput('Enter title','text', 'todoTitle');
+    todoTitleInput.setAttribute('required', '');
+    
+    const todoDateInput = createInput('Enter date', 'date', 'todoDate');
+    todoDateInput.setAttribute('required', '');
 
     const todoDescription = document.createElement('textarea');
     todoDescription.rows = 4;
@@ -19,6 +23,7 @@ export default function addTodosFactory() {
     todoDescription.placeholder = 'Write a description';
     
     const todosContainer = document.createElement('div');
+    todosContainer.textContent = 'List of todos';
 
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit';
@@ -36,5 +41,4 @@ export default function addTodosFactory() {
     }
 
     return form;
-
 }
