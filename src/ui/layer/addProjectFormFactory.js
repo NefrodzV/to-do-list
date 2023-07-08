@@ -11,9 +11,9 @@ export default function addProjectFormFactory() {
     const title = document.createElement('h2');
     title.textContent = 'PROJECT DETAILS'
 
-    const titleInput = createInput('Project Title ', 'text', 'title');
+    const titleInput = createInput('Enter project title ', 'text', 'title');
 
-    const dateInput = createInput('DUE DATE', 'date', 'date');
+    const dateInput = createInput('Enter date', 'date', 'date');
 
     const descriptionInput = createTextarea(50, 3);
 
@@ -22,16 +22,16 @@ export default function addProjectFormFactory() {
     const todosTitle = document.createElement('h2');
     todosTitle.textContent  = 'Register Todos';
 
-    const todoTitleInput = createInput('Title','text', 'todoTitle');
+    const todoTitleInput = createInput('Enter todo title','text', 'todoTitle');
 
-    const todoDateInput = createInput('Due date', 'date', 'todoDate');
-
+    const todoDateInput = createInput('Enter todo date', 'date', 'todoDate');
     const todoDescription = document.createElement('textarea');
     todoDescription.rows = 3;
     todoDescription.columns = 50;
     todoDescription.placeholder = 'Write a description of what you are doing';
     
     const todosContainer = document.createElement('div');
+    todosContainer.textContent = "List of todos"
 
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit';
