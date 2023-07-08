@@ -151,6 +151,28 @@ footer > a {
     display: block;
 }
 
+
+.form-nav {
+    padding: 0;
+    list-style: none;
+    color: var(--secondary-text-color);
+    display: flex;
+    gap: 8px;
+}
+
+.form-nav li {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.form-nav li:hover {
+    box-shadow: 0px  0px  12px var(--accent-color);
+}
+
+.form-nav li[selected] {
+    color: var(--accent-color);
+}
+
 ::placeholder {
     color: var(--accent-color);
 }
@@ -183,6 +205,10 @@ footer > a {
     height: 10rem;
     border:  2px solid var(--secondary-color);
 
+}
+
+textarea {
+    resize: none;
 }
 
 input, textarea {

@@ -15,20 +15,21 @@ export default function addProjectFormFactory() {
 
     const dateInput = createInput('DUE DATE', 'date', 'date');
 
-    const descriptionInput = createTextarea(50, 4);
+    const descriptionInput = createTextarea(50, 3);
 
     const addTodoButton = createButton('+ ADD TODO');
     
     const todosTitle = document.createElement('h2');
     todosTitle.textContent  = 'Register Todos';
 
-    const todoTitleInput = createInput('TODOS Title','text', 'todoTitle');
+    const todoTitleInput = createInput('Title','text', 'todoTitle');
 
     const todoDateInput = createInput('Due date', 'date', 'todoDate');
 
     const todoDescription = document.createElement('textarea');
-    todoDescription.rows = 4;
+    todoDescription.rows = 3;
     todoDescription.columns = 50;
+    todoDescription.placeholder = 'Write a description of what you are doing';
     
     const todosContainer = document.createElement('div');
 
@@ -37,7 +38,7 @@ export default function addProjectFormFactory() {
 
     todosTitle.append(addTodoButton);
     form.append(formTitle, title, titleInput, dateInput, descriptionInput, todosTitle, todoTitleInput, todoDateInput, todoDescription, todosContainer, submitButton);
-    formContainer.append(form);
+    
 
     function createInput(placeHolderText, inputType, inputName) {
         const input = document.createElement('input');
