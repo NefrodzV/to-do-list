@@ -25,13 +25,11 @@ function sidebarItemFactory(icon, title) {
 
     const titleElement = document.createElement('h3');
     titleElement.textContent = title;
-    titleElement.classList.add('uppercase');
+    titleElement.classList.add('item-title');
 
-    const itemCounterElement = document.createElement('h3');
-    itemCounterElement.textContent = 23;
-    itemCounterElement.classList.add('item-counter');
+    
 
-    sidebarItemElement.append(iconContainer, titleElement, itemCounterElement);
+    sidebarItemElement.append(iconContainer, titleElement, );
 
     return sidebarItemElement;
 }

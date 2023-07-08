@@ -11,16 +11,18 @@
     --sidebar-color:#94a3b8;
 }
 
-
-
 body {
     position: relative;
     margin: 0;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 25% auto;
+    grid-template-columns: min(47vw, 300px) auto;
     grid-template-rows: 5rem auto 2rem;
 
+}
+
+h3 {
+    font-size: 15px;
 }
 /* Header */
 header, footer {
@@ -36,7 +38,7 @@ header {
    gap: 1rem;
 }
 .logo-container {
-    height: 4rem;
+    height: 3rem;
 }
 
 .logo-container > img {
@@ -52,31 +54,33 @@ header {
 }
 
 .sidebar > h2 {
-    padding: 1rem 0;
-    margin: 1rem 0px;
+    text-align: center;
+    padding-block: 1rem;
     border-bottom: 1px solid var(--primary-color);
 }
 
 .sidebar-item {
     margin-block: .5rem;
-    font-size: 2rem;
     color: var(--primary-text-color);
     background-color: var(--accent-color);
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    
+    padding: 4px;
     border: .25rem solid var(--accent-color);
-    padding: 1rem;
     border-radius: 5px ;
 }
-
+.item-title {
+    text-transform: capitalize;
+    margin-inline-start: 4px;
+}
 .sidebar-item:hover {
     border: .25rem solid var(--primary-color)
 }
 
 .sidebar-item-container {
-    height: 40px ;
+    height: max(1.5vw, 20px) ;
 }
 
 .sidebar-item-container > img {
@@ -137,7 +141,6 @@ footer > a {
 }
 
 .layer-container > button {
-    font-size: 1rem;
     color: var(--secondary-color);
     background-color: var(--accent-color);
     margin: 1% 1% 0 auto;
@@ -179,7 +182,6 @@ footer > a {
 }
 
 input, textarea {
-    font-size: 1.2rem;
     background-color: var(--secondary-color);
     color: var(--primary-text-color);
     outline-color: var(--accent-color);
@@ -218,30 +220,15 @@ input, textarea {
 
 
 .project-form > button {
-    font-size: 1.5rem;
     color: var(--secondary-color);
     background-color: var(--accent-color);
     margin: 0 auto;
     width: fit-content;
 }
 
-
-/* Legend {
-    height: 50%;
-    
-}
-
-legend > h2 {
-    display: flex;
-    justify-content: space-between;
-} */
-
-
 /* HELPER CLASSES */
 
-.uppercase {
-    text-transform: uppercase;
-}
+
 
 .corner {
     border-radius: 5px;

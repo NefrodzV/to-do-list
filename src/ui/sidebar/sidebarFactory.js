@@ -7,7 +7,7 @@ export default function sidebarFactory() {
     sideBarElement.classList.add('sidebar');
 
     const title = document.createElement('h2');
-    title.textContent = "Projects";
+    title.textContent = "Menu";
     title.classList.add('uppercase');
     sideBarElement.appendChild(title);
     
