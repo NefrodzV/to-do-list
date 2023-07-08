@@ -21,6 +21,7 @@ body {
     grid-template-columns: min(47vw, 300px) auto;
     grid-template-rows: 5rem auto 2rem;
     font-family: var(--font-family);
+    font-size: 1em;
 
 }
 
@@ -185,21 +186,16 @@ footer > a {
 }
 
 input, textarea {
+    font-family: inherit;
+    font-size: inherit;
     background-color: var(--secondary-color);
     color: var(--primary-text-color);
     outline-color: var(--accent-color);
 }
 
-::-webkit-calendar-picker-indicator {
-   
-    background-image:  url('./asset/icon-calendar.png');
-}
-
 ::-webkit-calendar-picker-indicator:hover {
     cursor: pointer;
 }
-    
-    
 
 .project-form > input:focus {
     border-color: var(--accent-color);

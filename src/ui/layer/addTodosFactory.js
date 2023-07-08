@@ -9,9 +9,9 @@ export default function addTodosFactory() {
     const addTodoButton = document.createElement('button');
     addTodoButton.textContent = '+ ADD TODO';
 
-    const todoTitleInput = createInput('TODOS Title','text', 'todoTitle');
+    const todoTitleInput = createInput('Title','text', 'todoTitle');
 
-    const todoDateInput = createInput('Due date', 'date', 'todoDate');
+    const todoDateInput = createInput('Date', 'date', 'todoDate');
 
     const todoDescription = document.createElement('textarea');
     todoDescription.rows = 4;
