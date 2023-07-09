@@ -63,35 +63,30 @@ export default function addProjectFormFactory() {
     todoDescriptionTextarea.rows = 3;
     
     todoDescriptionTextarea.placeholder = 'Write a description of what you are doing';
+    todoFieldset.append(todoLegend, todoTitleLabel, todoTitleInput, todoDateLabel, todoDateInput, todoDescriptionLabel, todoDescriptionTextarea, addTodoButton)
+
+    const todoListFieldset = document.createElement('fieldset');
+    const todoListLegend = document.createElement('legend');
+    todoListLegend.textContent = 'Todo List'
     
-    const listTodoLabel = document.createElement('label');
-    listTodoLabel.textContent = 'List of todos:'
 
     const todosList = document.createElement('ul');
     todosList.classList.add('todos-form-list');
-    
+   
     const emptyListSpan = document.createElement('span')
     emptyListSpan.textContent = 'There are no todos!';
+
     emptyListSpan.classList.add('empty-list-msg');
 
     todosList.appendChild(emptyListSpan);
 
-    todoFieldset.append(todoLegend, todoTitleLabel, todoTitleInput, todoDateLabel, todoDateInput, todoDescriptionLabel, todoDescriptionTextarea, addTodoButton, listTodoLabel, todosList)
-
+    todoListFieldset.appendChild(todoListLegend);
+    todoListFieldset.appendChild(todosList);
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit';  
 
    
-    form.append(formTitle, projectFieldset, todoFieldset, submitButton);
-    
-
-    function createInput(placeHolderText, inputType, inputName) {
-        const input = document.createElement('input');
-        input.placeholder = placeHolderText;
-        input.type = inputType;
-        input.name = inputName;
-        return input;
-    }
+    form.append(formTitle, projectFieldset, todoFieldset, todoListFieldset, submitButton);
 
     return form;
 
