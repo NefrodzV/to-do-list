@@ -17,34 +17,34 @@ export default function layerFactory() {
     closeButton.textContent = "X";
     closeButton.addEventListener('click',toggleVisibility);
     
-    const navigation = formNavFactory();
+    // const navigation = formNavFactory();
 
     const container = document.createElement('div');
     container.classList.add(CONTAINER_STYLE);
     container.classList.add('corner');
 
     // Need to change this dynamically with a nav
-    let form = addTodosFactory();
+    let form = addProjectFormFactory();
     
-    events.on('updateForm', function(target) {
-        console.log("menu item clicked is " + target)
-        form.remove();
-        switch(target) {
-            case 'REGISTER TODO':
-                form = addTodosFactory();
-                container.appendChild(form);
-                break;
-            case 'REGISTER PROJECT':
-                form = addProjectFormFactory();
-                container.appendChild(form);
-                break;
-            default:
-                console.log("FORM UPDATE ERROR");
-        }
-    })
+    // events.on('updateForm', function(target) {
+    //     console.log("menu item clicked is " + target)
+    //     form.remove();
+    //     switch(target) {
+    //         case 'REGISTER TODO':
+    //             form = addTodosFactory();
+    //             container.appendChild(form);
+    //             break;
+    //         case 'REGISTER PROJECT':
+    //             form = addProjectFormFactory();
+    //             container.appendChild(form);
+    //             break;
+    //         default:
+    //             console.log("FORM UPDATE ERROR");
+    //     }
+    // })
     
     container.appendChild(closeButton);
-    container.append(navigation)
+    // container.append(navigation)
     container.appendChild(form);
     layerElement.appendChild(container);
     events.on('updateLayerVisibility', toggleVisibility);

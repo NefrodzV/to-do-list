@@ -118,8 +118,6 @@ footer > a {
     
 }
 
-
-
 .layer {
     display: none;
 }
@@ -140,72 +138,66 @@ footer > a {
     /* border:2px solid var(--secondary-color); */
     padding: 1rem;
     background-color: var(--primary-color);
-    width: 400px;
+    
+    
     
 }
 
 .layer-container > button {
-    color: var(--secondary-color);
+    cursor: pointer;
+    color: var(--secondary-text-color);
     background-color: var(--accent-color);
     margin: 1% 1% 0 auto;
     display: block;
-}
-
-
-.form-nav {
-    padding: 0;
-    list-style: none;
-    color: var(--secondary-text-color);
-    display: flex;
-    justify-content: space-evenly;
-    gap: 8px;
-}
-
-.form-nav li {
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.form-nav li:hover {
-    box-shadow: 0px  0px  12px var(--accent-color);
-}
-
-.form-nav li[selected] {
-    color: var(--accent-color);
 }
 
 ::placeholder {
     color: var(--accent-color);
 }
 
-
-
 .project-form {
     width: 100%;
     height: 100%;
     flex-direction: column;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     justify-content: center;
 }
 
+
+
 .project-form > h1 {
+    grid-column: 1 / 3;
     color: var(--secondary-text-color);
-    margin-block-end: 3%;
-}
-.project-form > h2 {
-    text-transform:uppercase;
 }
 
-.project-form > * {
-    margin-block: 3px;
+.project-form > button {
+    grid-column:  1 / 3;
+}
+.project-form > fieldset {
+    display: flex;
+    flex-direction: column;
+}
+.project-form > fieldset > legend, .project-form > fieldset > label {
+    color: var(--secondary-text-color);
+}
+
+.todos-form-list {
+    padding-inline: 0;
     
+    color: var(--primary-text-color);
 }
 
-.project-form > div {
-    background-color: var(--secondary-color);
-    height: 10rem;
-    border:  2px solid var(--secondary-color);
+.add-todo-button {
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+}
 
+.empty-list-msg {
+    text-align: center;
+    color: var(--secondary-text-color);
+    display: block;
 }
 
 textarea {
@@ -213,6 +205,8 @@ textarea {
 }
 
 input, textarea {
+    border: 3px;
+    margin-block: 3px;
     font-family: inherit;
     font-size: inherit;
     background-color: var(--secondary-color);

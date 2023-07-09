@@ -8,36 +8,81 @@ export default function addProjectFormFactory() {
     const formTitle = document.createElement('h1');
     formTitle.textContent = "REGISTER PROJECT";
 
-    const title = document.createElement('h2');
-    title.textContent = 'PROJECT DETAILS'
+    // Project details form part
+    const projectFieldset = document.createElement('fieldset');
+    const projectLegend = document.createElement('legend');
+    projectLegend.textContent = 'Project details';
 
-    const titleInput = createInput('Enter project title ', 'text', 'title');
+    const projectTitleLabel = document.createElement('label');
+    projectTitleLabel.textContent = 'Project title:';
 
-    const dateInput = createInput('Enter date', 'date', 'date');
+    const projectTitleInput = document.createElement('input');
+    projectTitleInput.type = 'text';
+    projectTitleInput.placeholder = 'Title';
+    projectTitleInput.name = 'projectTitle';
 
-    const descriptionInput = createTextarea(50, 3);
+    const projectDescriptionLabel = document.createElement('label');
+    projectDescriptionLabel.textContent = 'Project description:';
 
-    const addTodoButton = createButton('+ ADD TODO');
+    const projectDescriptionTextarea = document.createElement('textarea');
+    projectDescriptionTextarea.rows = 3;
+    projectDescriptionTextarea.placeholder = "What is the project about?";
+
+    projectFieldset.append(projectLegend, projectTitleLabel,projectTitleInput, projectDescriptionLabel, projectDescriptionTextarea)
     
-    const todosTitle = document.createElement('h2');
-    todosTitle.textContent  = 'Register Todos';
+    // Todo items form part
+    const todoFieldset = document.createElement('fieldset');
 
-    const todoTitleInput = createInput('Enter todo title','text', 'todoTitle');
+    const addTodoButton = document.createElement('button')
+    addTodoButton.classList.add('add-todo-button');
+    addTodoButton.textContent = '+ ADD TODO';
+    addTodoButton.type = 'button';
 
-    const todoDateInput = createInput('Enter todo date', 'date', 'todoDate');
-    const todoDescription = document.createElement('textarea');
-    todoDescription.rows = 3;
-    todoDescription.columns = 50;
-    todoDescription.placeholder = 'Write a description of what you are doing';
+    const todoLegend = document.createElement('legend');
+    todoLegend.textContent = 'Register todos'
+
+    const todoTitleLabel = document.createElement('label');
+    todoTitleLabel.textContent = 'Title:';
+
+    const todoTitleInput = document.createElement('input');
+    todoTitleInput.type = 'text';
+    todoTitleInput.placeholder = 'Title';
+    todoTitleInput.name = 'todoTitle';
+
+    const todoDateLabel = document.createElement('label');
+    todoDateLabel.textContent = 'Date:';
+
+    const todoDateInput = document.createElement('input');
+    todoDateInput.type = 'date';
+    todoDateInput.name = 'todoDate';
     
-    const todosContainer = document.createElement('div');
-    todosContainer.textContent = "List of todos"
+    const todoDescriptionLabel = document.createElement('label');
+    todoDescriptionLabel.textContent = 'Description:';
+
+    const todoDescriptionTextarea = document.createElement('textarea');
+    todoDescriptionTextarea.rows = 3;
+    
+    todoDescriptionTextarea.placeholder = 'Write a description of what you are doing';
+    
+    const listTodoLabel = document.createElement('label');
+    listTodoLabel.textContent = 'List of todos:'
+
+    const todosList = document.createElement('ul');
+    todosList.classList.add('todos-form-list');
+    
+    const emptyListSpan = document.createElement('span')
+    emptyListSpan.textContent = 'There are no todos!';
+    emptyListSpan.classList.add('empty-list-msg');
+
+    todosList.appendChild(emptyListSpan);
+
+    todoFieldset.append(todoLegend, todoTitleLabel, todoTitleInput, todoDateLabel, todoDateInput, todoDescriptionLabel, todoDescriptionTextarea, addTodoButton, listTodoLabel, todosList)
 
     const submitButton = document.createElement('button');
-    submitButton.textContent = 'Submit';
+    submitButton.textContent = 'Submit';  
 
-    todosTitle.append(addTodoButton);
-    form.append(formTitle, title, titleInput, dateInput, descriptionInput, todosTitle, todoTitleInput, todoDateInput, todoDescription, todosContainer, submitButton);
+   
+    form.append(formTitle, projectFieldset, todoFieldset, submitButton);
     
 
     function createInput(placeHolderText, inputType, inputName) {
@@ -48,21 +93,6 @@ export default function addProjectFormFactory() {
         return input;
     }
 
-    function createButton(title) {
-        const button = document.createElement('button');
-        button.textContent = title;
-        return button;
-    }
-
-    function createTextarea(col, row) {
-        const textarea = document.createElement('textarea');
-        textarea.columns = col;
-        textarea.rows = row;
-        textarea.placeholder = 'Write a description of what you are doing';
-        return textarea;
-    }
-
-    
     return form;
 
 }
