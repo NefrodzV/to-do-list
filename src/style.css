@@ -25,6 +25,10 @@ body {
 
 }
 
+button {
+    cursor: pointer;
+}
+
 h3 {
     font-size: 15px;
 }
@@ -137,17 +141,20 @@ footer > a {
 .layer-container {
     /* border:2px solid var(--secondary-color); */
     padding: 1rem;
-    background-color: var(--primary-color);
-    height: 500px;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 3px 4px var(--primary-color);
+
+    
     
     
 }
 
 .layer-container > button {
+    padding: 8px;
     cursor: pointer;
     color: var(--secondary-text-color);
     background-color: var(--accent-color);
-    margin: 1% 1% 0 auto;
+    margin: 1% 1% 1% auto;
     display: block;
 }
 
@@ -160,30 +167,45 @@ footer > a {
     height: 100%;
     flex-direction: column;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: min-content auto auto;
     gap: 1rem;
-    justify-content: center;
+    
 }
-
-
 
 .project-form > h1 {
     grid-column: 1 / 4;
-    color: var(--secondary-text-color);
+    color: var(--primary--color);
+    
 }
 
 .project-form > button {
     grid-column:  1 / 4;
     height: min-content;
+    padding: 8px;
+    text-transform: uppercase;
 }
 .project-form > fieldset {
+    height: 300px;
+    width: 250px;
     display: flex;
     flex-direction: column;
-}
-.project-form > fieldset > legend, .project-form > fieldset > label {
-    color: var(--secondary-text-color);
+    border-color: var(--accent-color);
 }
 
+.project-form > fieldset > legend {
+    text-transform: uppercase;
+}
+
+.project-form > fieldset > legend, .project-form > fieldset > label {
+    color: var(--primary-text-color);
+}
+.project-form > button {
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    margin: 0 auto;
+    width: fit-content;
+}
 .todos-form-list {
     height: 100%;
     padding-inline: 0;
@@ -207,46 +229,24 @@ textarea {
 }
 
 input, textarea {
-    border: 3px;
+    border: 3px solid var(--accent-color);
     margin-block: 3px;
     font-family: inherit;
     font-size: inherit;
     background-color: var(--secondary-color);
     color: var(--primary-text-color);
-    outline-color: var(--accent-color);
+    outline-color: var(--primary--color);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary--color);
 }
 
 ::-webkit-calendar-picker-indicator:hover {
     cursor: pointer;
 }
 
-.project-form > input:focus {
-    border-color: var(--accent-color);
-}
 
-.project-form > input:invalid {
-    border-color: red;
-}
-
-.project-form > h2 {
-    color: var(--secondary-text-color);
-    display: flex;
-    justify-content: space-between;
-}
-
-.project-form > h2 > button {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-
-
-.project-form > button {
-    color: var(--secondary-color);
-    background-color: var(--accent-color);
-    margin: 0 auto;
-    width: fit-content;
-}
 
 /* HELPER CLASSES */
 
