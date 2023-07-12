@@ -1,6 +1,10 @@
+import events from "../../events";
+import inputValidator from "./inputValidator";
 
 
 export default function addProjectFormFactory() {
+    let errorField = false;
+    const inputs = [];
 
     const createLegend = (text) => {
         const element = document.createElement('legend');
@@ -21,6 +25,7 @@ export default function addProjectFormFactory() {
         element.placeholder = placeholderText;
         element.name = name;
         element.id = name;
+        inputs.push(element);
         return element;
     }
 
@@ -33,8 +38,28 @@ export default function addProjectFormFactory() {
         return element;
     }
 
+    const displayInputError = (element) => {
+        errorField = true;
+        element.setAttribute('required', 'true');
+        
+    }
+
+    
+
+    events.on('displayInputError', displayInputError);
+
     const form = document.createElement('form');
+    form.action = '#';
+    form.method = 'post';
     form.classList.add('project-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        errorField = false;
+        console.log("submiting form......");
+        const data = Object.fromEntries(new FormData(event.target));
+        validate(data);
+        
+    })
 
     const formTitle = document.createElement('h1');
     formTitle.textContent = "REGISTER PROJECT";
@@ -46,6 +71,7 @@ export default function addProjectFormFactory() {
     const projectTitleLabel = createLabel('Project title:', 'projectTitle');
     
     const projectTitleInput = createInput('text', 'Title', 'projectTitle');
+    
     
     const projectDescriptionLabel = createLabel('Project description:', 'projectDescription')
     
@@ -97,6 +123,35 @@ export default function addProjectFormFactory() {
 
     form.append(formTitle, projectFieldset, todoFieldset, todoListFieldset, submitButton);
 
+    // function callback (item) {
+        
+    // }
+
+    // function holder(callback) {
+    //     let item = 'string';
+    //     // When an item is clicked
+    //     callback = callback(item);
+    // }
+
+    // // Holder class
+    // holder((item) => {
+    //     console.log(item);
+    //     item = "newString";
+    //     // Or maybe update repo
+    //     console.log(item);
+    // });
+
+    // function isEmpty
+
+    function validate(data) {
+        console.log('validating fields');
+        inputValidator(inputs);
+        if(errorField === true) {
+            console.log('Error in an input cannot register');
+            return;
+        }
+
+    }
     return form;
 
 }

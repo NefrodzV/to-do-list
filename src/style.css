@@ -142,11 +142,7 @@ footer > a {
     /* border:2px solid var(--secondary-color); */
     padding: 1rem;
     background-color: var(--secondary-color);
-    box-shadow: 1px 3px 4px var(--primary-color);
-
-    
-    
-    
+    box-shadow: 0px 3px 4px var(--primary-color);
 }
 
 .layer-container > button {
@@ -186,8 +182,8 @@ footer > a {
     text-transform: uppercase;
 }
 .project-form > fieldset {
-    height: 300px;
-    width: 250px;
+    height: 500px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     border-color: var(--accent-color);
@@ -225,6 +221,7 @@ footer > a {
 }
 
 textarea {
+    height: 100%;
     resize: none;
 }
 
@@ -237,7 +234,13 @@ input, textarea {
     color: var(--primary-text-color);
     outline-color: var(--primary--color);
 }
+input:invalid {
+    border-color: red;
+}
 
+input:focus:valid {
+    border-color: green;
+} 
 input:focus, textarea:focus {
     border-color: var(--primary--color);
 }
