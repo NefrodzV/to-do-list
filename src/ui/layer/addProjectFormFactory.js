@@ -1,10 +1,12 @@
 import events from "../../events";
+import todoItemComponent from "../todoItemComponent";
 import inputValidator from "./inputValidator";
 
 
 export default function addProjectFormFactory() {
     let errorField = false;
     const inputs = [];
+    const todos = [];
 
     const createLegend = (text) => {
         const element = document.createElement('legend');
@@ -40,11 +42,8 @@ export default function addProjectFormFactory() {
 
     const displayInputError = (element) => {
         errorField = true;
-        element.setAttribute('required', 'true');
-        
+        element.setAttribute('required', 'true'); 
     }
-
-    
 
     events.on('displayInputError', displayInputError);
 
@@ -56,8 +55,7 @@ export default function addProjectFormFactory() {
         event.preventDefault();
         errorField = false;
         console.log("submiting form......");
-        const data = Object.fromEntries(new FormData(event.target));
-        validate(data);
+        validate();
         
     })
 
@@ -86,6 +84,14 @@ export default function addProjectFormFactory() {
     addTodoButton.classList.add('add-todo-button');
     addTodoButton.textContent = '+ ADD TODO';
     addTodoButton.type = 'button';
+    addTodoButton.addEventListener('click', () => {
+        errorField = false;
+        inputValidator([todoTitleInput, todoDateInput]);
+        if(errorField) return;
+        removeEmptyListMessage();
+        addTodoToList();
+        
+    });
 
     const todoLegend = createLegend('Register todos');
     
@@ -108,14 +114,7 @@ export default function addProjectFormFactory() {
     
     const todosList = document.createElement('ul');
     todosList.classList.add('todos-form-list');
-   
-    const emptyListSpan = document.createElement('span')
-    emptyListSpan.textContent = 'There are no todos!';
-
-    emptyListSpan.classList.add('empty-list-msg');
-
-    todosList.appendChild(emptyListSpan);
-
+    
     todoListFieldset.appendChild(todoListLegend);
     todoListFieldset.appendChild(todosList);
     const submitButton = document.createElement('button');
@@ -141,17 +140,42 @@ export default function addProjectFormFactory() {
     //     console.log(item);
     // });
 
-    // function isEmpty
+    // Sends the inputs to inputvalidator function and events object report if there is anything wrong there
 
-    function validate(data) {
-        console.log('validating fields');
+    function validate() {
         inputValidator(inputs);
-        if(errorField === true) {
+        if(!listHasItem()) {
+            showEmptyListMessage()
+            errorField = true;
+        }
+        if(errorField) {
             console.log('Error in an input cannot register');
             return;
         }
-
     }
+      
+    const emptyListSpan = document.createElement('span');
+    emptyListSpan.textContent = 'There are no todos! Please add one!';
+    emptyListSpan.classList.add('empty-list-msg');
+
+    function showEmptyListMessage() {
+        todosList.append(emptyListSpan);
+    }
+    function removeEmptyListMessage() {
+        emptyListSpan.remove();
+    }
+    function listHasItem() {
+        return todosList.hasChildNodes();
+    }
+
+    function addTodoToList() {
+        let todoTitle = todoTitleInput.value;
+        let todoDate  = todoDateInput.value;
+
+        let itemComponent = todoItemComponent(todoTitle, todoDate);
+        todosList.append(itemComponent);
+    }
+
     return form;
 
 }
