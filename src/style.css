@@ -216,7 +216,7 @@ footer > a {
 
 .empty-list-msg {
     text-align: center;
-    color: var(--primary-text-color);
+    color: red;
     display: block;
 }
 
@@ -238,9 +238,7 @@ input:invalid {
     border-color: red;
 }
 
-input:focus:valid {
-    border-color: green;
-} 
+
 input:focus, textarea:focus {
     border-color: var(--primary--color);
 }
