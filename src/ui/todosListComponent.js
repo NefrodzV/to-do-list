@@ -1,11 +1,17 @@
-import events from "../events";
-
 
 export default function todoListComponent(todos, itemCallback) {
+    // initializer if there is something in the todos array
+    (() => {
+        if(todos.length = 0 ||  todos === null) return;
+        for(let i = 0; i < todos.length; i++) {
+            let todo = todos[i];
+            updateList(todo);
+        }
+    })
     const ul = document.createElement('ul');
-
-    function updateList(title, date) {
-        const item = todoItemComponent(title, date, itemCallback);
+    
+    function updateList(todo) {
+        const item = todoItemComponent(todo.getTitle(), todo.getDate(), itemCallback);
         ul.appendChild(item);
     }
 
@@ -13,12 +19,14 @@ export default function todoListComponent(todos, itemCallback) {
         getListElement() {
             return ul;
         },
-        updateList
+        updateList,
     }
 }
 
 function todoItemComponent(title, date, itemCallback) {
+    const STYLE = 'todo';
     const listItem = document.createElement('li');
+    listItem.classList.add(STYLE);
 
     const todoTitleElement = document.createElement('p');
     todoTitleElement.textContent = title;
@@ -31,7 +39,7 @@ function todoItemComponent(title, date, itemCallback) {
     deleteButton.type = 'button';
     deleteButton.addEventListener('click', () => {
         itemCallback(title);
-        // listItem.remove()
+        listItem.remove()
         
     })
 
