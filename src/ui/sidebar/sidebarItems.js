@@ -27,10 +27,8 @@ function sidebarItemFactory(icon, title) {
     titleElement.textContent = title;
     titleElement.classList.add('item-title');
 
-    
-
     sidebarItemElement.append(iconContainer, titleElement);
-
+    
     return sidebarItemElement;
 }
 
