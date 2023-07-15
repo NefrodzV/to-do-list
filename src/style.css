@@ -187,10 +187,15 @@ footer > a {
     display: flex;
     flex-direction: column;
     border-color: var(--accent-color);
+    box-shadow: 0px 3px 3px var(--primary-color) inset;
 }
 
 .project-form > fieldset > legend {
+    padding: 8px;
+    margin: 0 auto;
     text-transform: uppercase;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .project-form > fieldset > legend, .project-form > fieldset > label {
@@ -224,7 +229,9 @@ textarea {
     height: 100%;
     resize: none;
 }
-
+input {
+    min-height: 1.5rem;
+}
 input, textarea {
     border: 3px solid var(--accent-color);
     margin-block: 3px;
@@ -248,6 +255,7 @@ input:focus, textarea:focus {
 }
 
 .todo {
+    
     display:flex;
     justify-content: space-between;
     background-color: var(--accent-color);
@@ -256,6 +264,13 @@ input:focus, textarea:focus {
     padding:8px;
     margin-bottom: 4px;
     box-shadow: 0px 1px 1px var(--primary-color);
+}
+.todo > p {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 15ch;
+    white-space: nowrap;
 }
 
 .todo > button {
