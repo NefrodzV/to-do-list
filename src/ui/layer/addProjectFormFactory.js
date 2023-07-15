@@ -1,12 +1,13 @@
 import events from "../../events";
-import todoListComponent from "../todoItemComponent";
+import createTodo from "../../model/createTodo";
+import todoListComponent from "../todosListComponent";
 import inputValidator from "./inputValidator";
 
 
 export default function addProjectFormFactory() {
     let errorField = false;
     const inputs = [];
-    const todos = [];
+    const todosData = [];
 
     const createLegend = (text) => {
         const element = document.createElement('legend');
@@ -112,8 +113,8 @@ export default function addProjectFormFactory() {
     const todoListLegend = document.createElement('legend');
     todoListLegend.textContent = 'Todo List'
     
-    const listComponent = todoListComponent(todos, (item) => {
-        console.log('Item clicked is: ' + item);
+    const listComponent = todoListComponent(todosData, (item) => {
+       
     });
 
     const todosList = listComponent.getListElement();
@@ -155,14 +156,17 @@ export default function addProjectFormFactory() {
 
     function addTodoToList() {
         let todoTitle = todoTitleInput.value;
+        let todoDescription = todoDescriptionTextarea.value;
         let todoDate  = todoDateInput.value;
-
-        todos.push()
-        listComponent.updateList(todoTitle, todoDate);
-
-        // let itemComponent = todoItemComponent(todoTitle, todoDate);
-        // todosList.append(itemComponent);
+        
+        // Pushing to data array
+        let todo = createTodo(todoTitle, todoDescription, todoDate);
+        todosData.push(todo);
+        // Adding to list component
+        listComponent.updateList(todo);
     }
+
+    function removeFromTodosData() {}
 
     return form;
 
