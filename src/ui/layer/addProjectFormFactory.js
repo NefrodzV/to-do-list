@@ -2,12 +2,13 @@ import events from "../../events";
 import createTodo from "../../model/createTodo";
 import todoListComponent from "../todosListComponent";
 import inputValidator from "./inputValidator";
+import createProject from "../../model/createProject";
 
 
 export default function addProjectFormFactory() {
     let errorField = false;
     const inputs = [];
-    const todosData = [];
+    const todosData = [createTodo("My model title", "Model data example", '23/12/2023')];
 
     const createLegend = (text) => {
         const element = document.createElement('legend');
@@ -90,8 +91,10 @@ export default function addProjectFormFactory() {
         inputValidator([todoTitleInput, todoDateInput]);
         if(errorField) return;
         removeEmptyListMessage();
-        addTodoToList();
-        
+        addTodoToList(); 
+        resetInputText(todoTitleInput);
+        resetInputText(todoDescriptionTextarea);
+        resetInputText(todoDateInput);
     });
 
     const todoLegend = createLegend('Register todos');
@@ -113,8 +116,8 @@ export default function addProjectFormFactory() {
     const todoListLegend = document.createElement('legend');
     todoListLegend.textContent = 'Todo List'
     
-    const listComponent = todoListComponent(todosData, (item) => {
-       
+    const listComponent = todoListComponent(todosData, (title) => {
+       removeFromTodosData(title);
     });
 
     const todosList = listComponent.getListElement();
@@ -129,7 +132,7 @@ export default function addProjectFormFactory() {
     form.append(formTitle, projectFieldset, todoFieldset, todoListFieldset, submitButton);
 
     function validate() {
-        inputValidator(inputs);
+        inputValidator([projectTitleInput]);
         if(!listHasItem()) {
             showEmptyListMessage()
             errorField = true;
@@ -138,6 +141,7 @@ export default function addProjectFormFactory() {
             console.log('Error in an input cannot register');
             return;
         }
+        submit();
     }
       
     const emptyListSpan = document.createElement('span');
@@ -164,9 +168,32 @@ export default function addProjectFormFactory() {
         todosData.push(todo);
         // Adding to list component
         listComponent.updateList(todo);
+
     }
 
-    function removeFromTodosData() {}
+    function resetInputText(input) {
+        input.value = '';
+    }
+
+    function removeFromTodosData(title) {
+        for(let i = 0;i < todosData.length; i++) {
+            let todo = todosData[i];
+            if(todo.getTitle() === title) {
+                todosData.splice(i, 1);
+                break;
+            }
+
+        }
+        console.log(todosData);
+    }
+
+    function submit() {
+        let title = projectTitleInput.value;
+        let description = projectDescriptionTextarea.value;
+        
+        let project = createProject(title, description, todosData);
+        
+    }
 
     return form;
 
