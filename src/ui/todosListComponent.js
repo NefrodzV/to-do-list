@@ -1,15 +1,17 @@
 
 export default function todoListComponent(todos, itemCallback) {
+    
+    const ul = document.createElement('ul');
+
     // initializer if there is something in the todos array
     (() => {
-        if(todos.length = 0 ||  todos === null) return;
+        if(todos.length === 0 || todos === null) return;
         for(let i = 0; i < todos.length; i++) {
             let todo = todos[i];
             updateList(todo);
         }
-    })
-    const ul = document.createElement('ul');
-    
+    })();
+
     function updateList(todo) {
         const item = todoItemComponent(todo.getTitle(), todo.getDate(), itemCallback);
         ul.appendChild(item);
@@ -27,6 +29,7 @@ function todoItemComponent(title, date, itemCallback) {
     const STYLE = 'todo';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
+    listItem.classList.add('corner');
 
     const todoTitleElement = document.createElement('p');
     todoTitleElement.textContent = title;
