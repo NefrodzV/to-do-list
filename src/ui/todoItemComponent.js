@@ -1,7 +1,24 @@
 import events from "../events";
 
-export default function todoItemComponent(title, date) {
-    const container = document.createElement('li');
+
+export default function todoListComponent(todos, itemCallback) {
+    const ul = document.createElement('ul');
+
+    function updateList(title, date) {
+        const item = todoItemComponent(title, date, itemCallback);
+        ul.appendChild(item);
+    }
+
+    return {
+        getListElement() {
+            return ul;
+        },
+        updateList
+    }
+}
+
+function todoItemComponent(title, date, itemCallback) {
+    const listItem = document.createElement('li');
 
     const todoTitleElement = document.createElement('p');
     todoTitleElement.textContent = title;
@@ -11,11 +28,13 @@ export default function todoItemComponent(title, date) {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = "X";
+    deleteButton.type = 'button';
     deleteButton.addEventListener('click', () => {
-        container.remove()
+        itemCallback(title);
+        // listItem.remove()
         
     })
 
-    container.append(todoTitleElement, todoDateElement, deleteButton);
-    return container;
+    listItem.append(todoTitleElement, todoDateElement, deleteButton);
+    return listItem;
 }
