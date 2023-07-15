@@ -1,5 +1,5 @@
 import events from "../../events";
-import todoItemComponent from "../todoItemComponent";
+import todoListComponent from "../todoItemComponent";
 import inputValidator from "./inputValidator";
 
 
@@ -112,7 +112,12 @@ export default function addProjectFormFactory() {
     const todoListLegend = document.createElement('legend');
     todoListLegend.textContent = 'Todo List'
     
-    const todosList = document.createElement('ul');
+    const listComponent = todoListComponent(todos, (item) => {
+        console.log('Item clicked is: ' + item);
+    });
+
+    const todosList = listComponent.getListElement();
+
     todosList.classList.add('todos-form-list');
     
     todoListFieldset.appendChild(todoListLegend);
@@ -121,26 +126,6 @@ export default function addProjectFormFactory() {
     submitButton.textContent = 'Submit';  
 
     form.append(formTitle, projectFieldset, todoFieldset, todoListFieldset, submitButton);
-
-    // function callback (item) {
-        
-    // }
-
-    // function holder(callback) {
-    //     let item = 'string';
-    //     // When an item is clicked
-    //     callback = callback(item);
-    // }
-
-    // // Holder class
-    // holder((item) => {
-    //     console.log(item);
-    //     item = "newString";
-    //     // Or maybe update repo
-    //     console.log(item);
-    // });
-
-    // Sends the inputs to inputvalidator function and events object report if there is anything wrong there
 
     function validate() {
         inputValidator(inputs);
@@ -172,8 +157,11 @@ export default function addProjectFormFactory() {
         let todoTitle = todoTitleInput.value;
         let todoDate  = todoDateInput.value;
 
-        let itemComponent = todoItemComponent(todoTitle, todoDate);
-        todosList.append(itemComponent);
+        todos.push()
+        listComponent.updateList(todoTitle, todoDate);
+
+        // let itemComponent = todoItemComponent(todoTitle, todoDate);
+        // todosList.append(itemComponent);
     }
 
     return form;
