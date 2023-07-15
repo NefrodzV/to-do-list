@@ -1,7 +1,5 @@
 export default function createTodo(title, description, date, completeState = false) {
 
-
-
     const getTitle  = ()  =>{
         return title;
     }
@@ -21,6 +19,7 @@ export default function createTodo(title, description, date, completeState = fal
     return {
         getTitle, 
         getDescription,
-        getDate
+        getDate,
+        getCompleteState
     }
 }
