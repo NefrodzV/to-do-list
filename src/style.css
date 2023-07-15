@@ -247,15 +247,34 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
+.todo {
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    align-items: center;
+    padding:8px;
+    margin-bottom: 4px;
+    box-shadow: 0px 1px 1px var(--primary-color);
+}
+
+.todo > button {
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    /* border-radius: 50%; */
+    height: min-content;
+    width: min-content;
+    border-color: var(--primary-color);
+    
+
+}
 
 
 /* HELPER CLASSES */
 
-
-
-.corner {
+/* .corner {
     border-radius: 5px;
-}
+} */
 
 /* RESET */
 
