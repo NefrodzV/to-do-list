@@ -1,5 +1,5 @@
 import projectRepository from "../../data/repository/projectRepository";
-import projectListComponent from "./projectListComponent";
+import projectListComponent from "../listComponents/projectListComponent";
 
 
 export default function mainFactory() {

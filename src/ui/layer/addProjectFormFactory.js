@@ -1,6 +1,6 @@
 import events from "../../events";
 import createTodo from "../../data/model/createTodo";
-import todoListComponent from "../todosListComponent";
+import todoListComponent from "../listComponents/todosListComponent";
 import inputValidator from "./inputValidator";
 import createProject from "../../data/model/createProject";
 import projectRepository from "../../data/repository/projectRepository";
