@@ -3,12 +3,12 @@ import createTodo from "../../data/model/createTodo";
 import todoListComponent from "../todosListComponent";
 import inputValidator from "./inputValidator";
 import createProject from "../../data/model/createProject";
-
+import projectRepository from "../../data/repository/projectRepository";
 
 export default function addProjectFormFactory() {
     let errorField = false;
     const inputs = [];
-    const todosData = [createTodo("My model title", "Model data example", '23/12/2023')];
+    const todosData = [];
 
     const createLegend = (text) => {
         const element = document.createElement('legend');
@@ -174,6 +174,7 @@ export default function addProjectFormFactory() {
 
     function resetInputText(input) {
         input.value = '';
+        input.removeAttribute('required');
     }
 
     function removeFromTodosData(title) {
@@ -193,9 +194,7 @@ export default function addProjectFormFactory() {
         let description = projectDescriptionTextarea.value;
         
         let project = createProject(title, description, todosData);
-
-        console.log(project);
-        
+       projectRepository.addProject(project);
     }
 
     return form;

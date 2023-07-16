@@ -11,8 +11,7 @@ export default function layerFactory() {
     layerElement.classList.add(LAYER_STYLE);
 
     const toggleVisibility = () => {layerElement.toggleAttribute('visible');}
-    toggleVisibility();
-
+    
     const closeButton = document.createElement('button');
     closeButton.textContent = "X";
     closeButton.addEventListener('click',toggleVisibility);
