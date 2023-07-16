@@ -6,7 +6,7 @@ let events = {
     on: function(eventName, fn) {
         this._events[eventName] = this._events[eventName] || [];
         this._events[eventName].push(fn)
-        console.log(this._events);
+        
     },
 
     off: function(eventName, fn) {
