@@ -1,10 +1,9 @@
 import factoryLocalStorage from "../storage/factoryLocalStorage";
 const projectRepository = (() => {
     
-    let data = [];
-
     const localStorage = factoryLocalStorage();
-
+    let data = [];
+    
     const update = () => {
         data = localStorage.getAll();
     }
@@ -17,7 +16,9 @@ const projectRepository = (() => {
     const getAllProjects = () => {
         return data;
     }
-
+    
+    update();
+    console.log(data);
     return {
         addProject, 
         getAllProjects
