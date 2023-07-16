@@ -1,6 +1,6 @@
 export default function createTodo(title, description, date, completeState = false) {
 
-    const getTitle  = ()  =>{
+    const getTitle  = () => {
         return title;
     }
 
