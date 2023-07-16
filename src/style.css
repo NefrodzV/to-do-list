@@ -215,6 +215,7 @@ footer > a {
 }
 
 .add-todo-button {
+    padding: 4px;
     color: var(--secondary-color);
     background-color: var(--accent-color);
 }
@@ -283,13 +284,6 @@ input:focus, textarea:focus {
     
 
 }
-
-
-/* HELPER CLASSES */
-
-/* .corner {
-    border-radius: 5px;
-} */
 
 /* RESET */
 
