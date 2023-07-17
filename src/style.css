@@ -101,8 +101,41 @@ header {
 
 /* Main */
 main {
+    padding: 16px;
     background-color: var(--secondary-color);
 }
+
+.list-header {
+    text-transform: uppercase;
+}
+.project-list {
+    padding: 0;
+}
+
+.project {
+    border: 5px solid var(--accent-color);
+    cursor: pointer;
+    padding: 16px;
+    display: flex;
+    gap:4px;
+    justify-content: space-between;
+    background-color: var(--accent-color);
+    color:var(--primary-color);
+    font-weight: bold;
+    align-items: center;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.project:hover {
+
+    border: 5px solid var(--primary-color);
+}
+
+.project-title {
+    margin: 0;
+}
+
 /* Footer */
 footer {
     justify-content: center;
