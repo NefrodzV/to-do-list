@@ -1,7 +1,9 @@
 export default function projectListComponent(projects, itemCallback) {
     console.log(projects);
 
+    const STYLE = 'project-list';
     const ul = document.createElement('ul');
+    ul.classList.add(STYLE);
 
     (() => {
         if(projects.length === 0 || projects === null) return;
@@ -34,6 +36,7 @@ function projectItemComponent(id, title, itemCallback) {
 
     const titlePara = document.createElement('p');
     titlePara.textContent = title;
+    titlePara.classList.add('project-title');
 
     const completionSpan = document.createElement('span');
     completionSpan.textContent = '8/12';
