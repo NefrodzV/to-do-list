@@ -13,7 +13,7 @@ export default function todoListComponent(todos, itemCallback) {
     })();
 
     function updateList(todo) {
-        const item = todoItemComponent(todo.title, todo.date, itemCallback);
+        const item = todoItemComponent(todo.getTitle(),  todo.getDate(), itemCallback);
         ul.appendChild(item);
     }
 

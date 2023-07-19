@@ -14,7 +14,7 @@ export default function projectListComponent(projects, itemCallback) {
     })();
 
     function updateList(project) {
-        const item = projectItemComponent(project.id, project.title, itemCallback);
+        const item = projectItemComponent(project.getId(), project.getTitle(), itemCallback);
         ul.appendChild(item);
     }
 
