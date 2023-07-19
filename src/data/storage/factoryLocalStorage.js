@@ -1,9 +1,11 @@
+import createProject from "../model/createProject";
+
 export default function factoryLocalStorage() {
     const storage = window['localStorage'];
     
     const add = (project) => {
         let index = storage.length;
-        project.id = index;
+        project.setId(index);
         
         let projectJSON = JSON.stringify(project);
         
@@ -17,7 +19,8 @@ export default function factoryLocalStorage() {
         const projects = [];
         for(let i = 0; i < storage.length; i++) {
             let projectJson = storage[i];
-            let project = JSON.parse(projectJson);
+            let obj = JSON.parse(projectJson);
+            let project = createProject(obj.title, obj.description, obj.todos);
             projects.push(project);
         }
         return projects;
