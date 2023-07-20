@@ -1,5 +1,7 @@
+import events from "../../events";
+
 export default function projectListComponent(projects, itemCallback) {
-    console.log(projects);
+    
 
     const STYLE = 'project-list';
     const ul = document.createElement('ul');
@@ -9,14 +11,31 @@ export default function projectListComponent(projects, itemCallback) {
         if(projects.length === 0 || projects === null) return;
         for(let i = 0; i < projects.length; i++) {
             let item = projects[i];
-            updateList(item);
+            addItem(item);
         }
     })();
 
-    function updateList(project) {
+    function addItem(project) {
         const item = projectItemComponent(project.getId(), project.getTitle(), itemCallback);
         ul.appendChild(item);
     }
+
+    function removeItems() {
+        while(ul.firstChild) {
+            ul.removeChild(ul.firstChild)
+        }
+    }
+
+    function updateList(projects) {
+        removeItems();
+        for(let i = 0; i < projects.length; i++) {
+            let project = projects[i];
+            addItem(project);
+        }
+    }
+
+    events.on('updateProjectList', updateList);
+    console.log(events);
 
     return {
         getList() {
