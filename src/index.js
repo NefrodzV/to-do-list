@@ -9,12 +9,12 @@ const header = headerFactory();
 const sideBar = sidebarFactory();
 const main = mainFactory();
 const footer = footerFactory();
-const layer = layerFactory();
+// const layer = layerFactory();
 
 document.body.appendChild(header);
 document.body.appendChild(sideBar);
 document.body.appendChild(main);
 document.body.appendChild(footer);
-document.body.appendChild(layer);
+// document.body.appendChild(layer);
 
 
