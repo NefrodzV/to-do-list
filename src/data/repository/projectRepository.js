@@ -1,3 +1,4 @@
+import events from "../../events";
 import factoryLocalStorage from "../storage/factoryLocalStorage";
 const projectRepository = (() => {
     
@@ -6,6 +7,7 @@ const projectRepository = (() => {
     
     const update = () => {
         data = localStorage.getAll();
+        events.emit('updateProjectList', data);
     }
 
     const addProject = (project) => {
@@ -18,11 +20,13 @@ const projectRepository = (() => {
     }
     
     update();
-    console.log(data);
+    
     return {
         addProject, 
         getAllProjects
     }
+
+    
 })();
    
 export default projectRepository;
