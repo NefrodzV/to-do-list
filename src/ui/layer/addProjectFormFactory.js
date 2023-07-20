@@ -200,6 +200,7 @@ export default function addProjectFormFactory() {
         let project = createProject(title, description, todosData);
         projectRepository.addProject(project);
     }
+    const elementArray = [form];
 
     return form;
 
