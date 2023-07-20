@@ -13,6 +13,8 @@
     --font-family: 'Lucida Console', 'monospace';
 }
 
+
+
 body {
     position: relative;
     margin: 0;
@@ -22,7 +24,7 @@ body {
     grid-template-rows: 5rem auto 2rem;
     font-family: var(--font-family);
     font-size: 1em;
-
+    
 }
 
 button {
@@ -101,15 +103,20 @@ header {
 
 /* Main */
 main {
+    
     padding: 16px;
     background-color: var(--secondary-color);
+    overflow-y: auto;
 }
 
 .list-header {
     text-transform: uppercase;
 }
 .project-list {
+    max-height: 650px;
     padding: 0;
+    overflow-y: auto;
+    
 }
 
 .project {
@@ -155,6 +162,8 @@ footer > a {
     
 }
 
+/* Form */
+
 .layer {
     display: none;
 }
@@ -172,7 +181,7 @@ footer > a {
 }
 
 .layer-container {
-    /* border:2px solid var(--secondary-color); */
+    width: max(90vw, 300px);
     padding: 1rem;
     background-color: var(--secondary-color);
     box-shadow: 0px 3px 4px var(--primary-color);
@@ -196,40 +205,52 @@ footer > a {
     height: 100%;
     flex-direction: column;
     display: grid;
-    grid-template-columns: repeat(3, auto);
     grid-template-rows: min-content auto auto;
-    gap: 1rem;
+    gap: 8px;
+    
     
 }
 
 .project-form > h1 {
-    grid-column: 1 / 4;
     color: var(--primary--color);
     
 }
 
 .project-form > button {
-    grid-column:  1 / 4;
+    
     height: min-content;
     padding: 8px;
     text-transform: uppercase;
 }
-.project-form > fieldset {
+
+.fieldset-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    justify-content: center;
+}
+
+fieldset {
     height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+/* .project-form > fieldset {
+    
     width: 450px;
     display: flex;
     flex-direction: column;
     border-color: var(--accent-color);
     box-shadow: 0px 3px 3px var(--primary-color) inset;
-}
+} */
 
-.project-form > fieldset > legend {
+/* .project-form > fieldset > legend {
     padding: 8px;
     margin: 0 auto;
     text-transform: uppercase;
     background-color: var(--secondary-color);
     border: 2px solid var(--primary-color);
-}
+} */
 
 .project-form > fieldset > legend, .project-form > fieldset > label {
     color: var(--primary-text-color);
