@@ -1,5 +1,4 @@
 import '../../style.css';
-import inboxPNG from '../../asset/icon-inbox.png';
 import sidebarItems from './sidebarItems';
 export default function sidebarFactory() {
     
