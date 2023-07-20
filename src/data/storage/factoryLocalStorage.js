@@ -10,8 +10,7 @@ export default function factoryLocalStorage() {
         let projectJSON = JSON.stringify(project);
         
         storage.setItem(index, projectJSON);
-        console.log(storage);
-
+    
     }
 
     
