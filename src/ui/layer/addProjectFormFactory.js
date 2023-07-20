@@ -130,7 +130,11 @@ export default function addProjectFormFactory() {
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit';  
 
-    form.append(formTitle, projectFieldset, todoFieldset, todoListFieldset, submitButton);
+    const fieldsetContainer = document.createElement('div');
+    fieldsetContainer.classList.add('fieldset-container');
+    fieldsetContainer.append(projectFieldset, todoFieldset, todoListFieldset);
+
+    form.append(formTitle, fieldsetContainer, submitButton);
 
     function validate() {
         inputValidator([projectTitleInput]);
@@ -194,7 +198,7 @@ export default function addProjectFormFactory() {
         let description = projectDescriptionTextarea.value;
         
         let project = createProject(title, description, todosData);
-       projectRepository.addProject(project);
+        projectRepository.addProject(project);
     }
 
     return form;
