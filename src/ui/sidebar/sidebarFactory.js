@@ -1,5 +1,5 @@
 import '../../style.css';
-import sidebarItems from './sidebarItems';
+import sidebarListComponent from './sidebarListComponent';
 export default function sidebarFactory() {
     
     const sideBarElement = document.createElement('div');
@@ -8,14 +8,12 @@ export default function sidebarFactory() {
     const title = document.createElement('h2');
     title.textContent = "Menu";
     title.classList.add('uppercase');
-    sideBarElement.appendChild(title);
-    
-    const items = sidebarItems;
-    
-    for(let i = 0; i < items.length; i++) {
-        let item = items[i];
-        sideBarElement.appendChild(item);
-    }
+
+    const nav = document.createElement('nav');
+   
+    nav.appendChild(sidebarListComponent());
+
+    sideBarElement.append(title, nav);;
     
     return sideBarElement;
     
