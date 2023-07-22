@@ -69,6 +69,8 @@ header {
     border-bottom: 1px solid var(--primary-color);
 }
 
+
+
 .sidebar-item {
     margin-block: .5rem;
     color: var(--primary-text-color);
@@ -301,4 +303,8 @@ input:focus, textarea:focus {
 h1, h2, h3 {
     margin: 0;
     margin-block: 0;
+}
+
+ul {
+    padding: 0;
 }
