@@ -5,7 +5,8 @@ export default function factoryLocalStorage() {
     
     const add = (project) => {
         let index = storage.length;
-        project.setId(index);
+        
+        console.log(index)
         
         let projectJSON = JSON.stringify(project);
         
@@ -13,20 +14,27 @@ export default function factoryLocalStorage() {
     
     }
 
-    
+    // storage.clear();
     const getAll = () => {
         const projects = [];
         for(let i = 0; i < storage.length; i++) {
             let projectJson = storage[i];
             let obj = JSON.parse(projectJson);
-            let project = createProject(obj.title, obj.description, obj.todos);
+            console.log(storage);
+            let project = createProject(obj.id, obj.title, obj.description, obj.todos);
+           
             projects.push(project);
         }
         return projects;
     }
 
+    const getLastId = () => {
+        return storage.length;
+    }
+
     return {
         add, 
-        getAll
+        getAll,
+        getLastId
     }
 }
