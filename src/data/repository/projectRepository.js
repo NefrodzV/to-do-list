@@ -1,4 +1,5 @@
 import events from "../../events";
+import createProject from "../model/createProject";
 import factoryLocalStorage from "../storage/factoryLocalStorage";
 const projectRepository = (() => {
     
@@ -10,7 +11,9 @@ const projectRepository = (() => {
         events.emit('updateProjectList', data);
     }
 
-    const addProject = (project) => {
+    const addProject = (title, description, todos) => {
+        let id = localStorage.getLastId();
+        let project = createProject(id, title, description, todos);
         localStorage.add(project);
         update();
     }
