@@ -1,5 +1,5 @@
 
-export default function todoListComponent(todos, itemCallback) {
+export default function formListComponent(todos, itemCallback) {
     
     const ul = document.createElement('ul');
 
@@ -13,7 +13,7 @@ export default function todoListComponent(todos, itemCallback) {
     })();
 
     function updateList(todo) {
-        const item = todoItemComponent(todo.getTitle(),  todo.getDate(), itemCallback);
+        const item = formItemComponent(todo.getTitle(),  todo.getDate(), itemCallback);
         ul.appendChild(item);
     }
 
@@ -25,17 +25,17 @@ export default function todoListComponent(todos, itemCallback) {
     }
 }
 
-function todoItemComponent(title, date, itemCallback) {
+function formItemComponent(title, date, itemCallback) {
     const STYLE = 'todo';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
     listItem.classList.add('corner');
 
-    const todoTitleElement = document.createElement('p');
-    todoTitleElement.textContent = title;
+    const formTitleElement = document.createElement('p');
+    formTitleElement.textContent = title;
 
-    const todoDateElement = document.createElement('p');
-    todoDateElement.textContent = date;
+    const formDateElement = document.createElement('p');
+    formDateElement.textContent = date;
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = "X";
@@ -46,6 +46,6 @@ function todoItemComponent(title, date, itemCallback) {
         
     })
 
-    listItem.append(todoTitleElement, todoDateElement, deleteButton);
+    listItem.append(formTitleElement, formDateElement, deleteButton);
     return listItem;
 }

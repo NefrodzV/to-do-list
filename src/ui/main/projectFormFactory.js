@@ -1,9 +1,8 @@
 import events from "../../events";
 import createTodo from "../../data/model/createTodo";
-import todoListComponent from "../listComponents/todosListComponent";
 import inputValidator from "../layer/inputValidator";
-import createProject from "../../data/model/createProject";
 import projectRepository from "../../data/repository/projectRepository";
+import formListComponent from "../listComponents/formListComponent";
 
 export default function projectFormFactory() {
     let errorField = false;
@@ -117,7 +116,7 @@ export default function projectFormFactory() {
     const todoListLegend = document.createElement('legend');
     todoListLegend.textContent = 'Todo List'
     
-    const listComponent = todoListComponent(todosData, (title) => {
+    const listComponent = formListComponent(todosData, (title) => {
        removeFromTodosData(title);
     });
 
@@ -199,8 +198,7 @@ export default function projectFormFactory() {
         
         projectRepository.addProject(title, description, todosData);
     }
-    const elementArray = [form];
-
+    
     return form;
 
 }
