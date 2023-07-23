@@ -1,5 +1,6 @@
 import projectRepository from "../../data/repository/projectRepository";
 import projectListComponent from "../listComponents/projectListComponent";
+import events from "../../events";
 export default function inboxFactory() {
 
     const container = document.createElement('div');
@@ -10,11 +11,12 @@ export default function inboxFactory() {
     const listComponent = projectListComponent(projectRepository.getAllProjects(), (id) => {
         console.log('item id clicked is: ' + id)
         console.log('view project data flow');
+        events.emit('updateLayerVisibility');
     });
 
     const projectList = listComponent.getList();
 
     container.append(contentHeader, projectList);
-    
+
     return container;
 }
