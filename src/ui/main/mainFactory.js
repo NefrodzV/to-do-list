@@ -16,6 +16,7 @@ export default function mainFactory() {
     function update(element) {
         removeElements();
         mainElement.appendChild(element);
+        mainElement.appendChild(layer);
     }
 
     // Used to communicate when menu items are clicked
