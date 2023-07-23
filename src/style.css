@@ -78,7 +78,6 @@ header {
     cursor: pointer;
     display: flex;
     align-items: center;
-    
     padding: 4px;
     border: .25rem solid var(--accent-color);
     border-radius: 5px ;
@@ -109,15 +108,43 @@ header {
 
 /* Main */
 main {
-    
+    position: relative;
     padding: 16px;
     background-color: var(--secondary-color);
     overflow-y: auto;
 }
+.layer {
+    display: none;
 
-/* main > div {
+}
+
+.layer[visible] {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-} */
+    width: 100%;
+    background-color: rgba(0, 0 ,0 ,.7);
+}
+
+.layer-container {
+    background-color: var(--secondary-color);
+    width: 50%;
+    height: 90%;
+    margin: auto 0;
+}
+
+.close-button {
+    margin: 1% 1% 1% auto;
+    cursor: pointer;
+    display: block;
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    outline: var(--primary-color);
+}
+
 
 .list-header {
     text-transform: uppercase;
@@ -297,6 +324,15 @@ input:focus, textarea:focus {
     
 
 }
+
+
+ 
+
+
+
+
+
+
 
 /* RESET */
 
