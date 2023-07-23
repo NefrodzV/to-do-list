@@ -1,9 +1,9 @@
-export default function createProject(title, description, todos) {
-    let id;
+export default function createProject(id, title, description, todos) {
     
-    const setId = (id) => {
-        id = id;
-    }
+    
+    // const setId = (id) => {
+    //     id = id;
+    // }
     const getId = () => { return id; }
 
     const getTitle = () => {return title;}
@@ -18,14 +18,13 @@ export default function createProject(title, description, todos) {
 
     // For serializing
     const getObject = () => {
-        return { title, description, todos};
+        return { id, title, description, todos};
     }
     const toJSON = () => {
         return getObject();
     }
     return {
         toJSON,
-        setId,
         getId,
         getDescription,
         getTitle, 
