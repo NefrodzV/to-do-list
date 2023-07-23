@@ -197,8 +197,7 @@ export default function projectFormFactory() {
         let title = projectTitleInput.value;
         let description = projectDescriptionTextarea.value;
         
-        let project = createProject(title, description, todosData);
-        projectRepository.addProject(project);
+        projectRepository.addProject(title, description, todosData);
     }
     const elementArray = [form];
 
