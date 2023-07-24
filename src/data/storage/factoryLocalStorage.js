@@ -28,6 +28,18 @@ export default function factoryLocalStorage() {
         return projects;
     }
 
+    const getProjectWithId = (id) => {
+        let projectJSON = storage.getItem(id);
+        let obj = JSON.parse(projectJSON);
+        console.log('Obj from local storage parsed');
+        console.log(obj);
+        let project = createProject(obj.id, obj.title, obj.description, obj.todos);
+        console.log('Project from local storage parsed');
+        console.log(project);
+        console.log(project.getTodos());
+        return project;
+    }
+
     const getLastId = () => {
         return storage.length;
     }
@@ -35,6 +47,7 @@ export default function factoryLocalStorage() {
     return {
         add, 
         getAll,
-        getLastId
+        getLastId,
+        getProjectWithId
     }
 }
