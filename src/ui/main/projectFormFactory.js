@@ -44,7 +44,8 @@ export default function projectFormFactory() {
 
     const displayInputError = (element) => {
         errorField = true;
-        element.setAttribute('required', 'true'); 
+        element.value = ''
+        element.classList.add('error');
     }
 
     events.on('displayInputError', displayInputError);
@@ -146,6 +147,15 @@ export default function projectFormFactory() {
             return;
         }
         submit();
+
+        // Reseting form
+        resetInputText(projectTitleInput);
+        resetInputText(projectDescriptionTextarea);
+        resetInputText(todoTitleInput);
+        resetInputText(todoDescriptionTextarea);
+        resetInputText(todoDateInput);  
+        listComponent.clear();
+        todosData.length = 0
     }
       
     const emptyListSpan = document.createElement('span');
@@ -169,6 +179,7 @@ export default function projectFormFactory() {
         
         // Pushing to data array
         let todo = createTodo(todoTitle, todoDescription, todoDate);
+        console.log(todo);
         todosData.push(todo);
         // Adding to list component
         listComponent.updateList(todo);
@@ -176,8 +187,8 @@ export default function projectFormFactory() {
     }
 
     function resetInputText(input) {
-        input.value = '';
-        input.removeAttribute('required');
+        input.value = "";
+        input.classList.remove('error');
     }
 
     function removeFromTodosData(title) {
@@ -189,7 +200,6 @@ export default function projectFormFactory() {
             }
 
         }
-        console.log(todosData);
     }
 
     function submit() {

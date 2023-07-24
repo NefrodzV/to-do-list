@@ -17,11 +17,18 @@ export default function formListComponent(todos, itemCallback) {
         ul.appendChild(item);
     }
 
+    function clear() {
+        while(ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+    }
+
     return {
         getListElement() {
             return ul;
         },
         updateList,
+        clear
     }
 }
 
