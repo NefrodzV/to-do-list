@@ -21,7 +21,7 @@ export default function mainFactory() {
     }
 
     // Used to communicate when menu items are clicked
-    // events.on('updateMain', update);
+    events.on('updateMain', update);
    
     function removeElements() {
         while(mainElement.firstChild) {
