@@ -5,7 +5,7 @@ export default function todoListComponent() {
     function addItem(todo) {
         console.log()
         console.log(todo);
-        const item = TodoItemComponent(todo.title, todo.description, todo.date);
+        const item = TodoItemComponent(todo.getTitle(), todo.getDescription(), todo.getDate());
         ul.appendChild(item);
     }
 
