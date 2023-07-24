@@ -12,6 +12,7 @@ export default function inboxFactory() {
         console.log('item id clicked is: ' + id)
         console.log('view project data flow');
         events.emit('updateLayerVisibility');
+        events.emit('updateProjectDetails', id);
     });
 
     const projectList = listComponent.getList();
