@@ -3,11 +3,14 @@ export default function todoListComponent() {
     const ul = document.createElement('ul');
 
     function addItem(todo) {
-        const item = TodoItemComponent(todo.getId(), todo.getTitle(), todo.getDescription(), todo.getDate());
+        console.log()
+        console.log(todo);
+        const item = TodoItemComponent(todo.title, todo.description, todo.date);
         ul.appendChild(item);
     }
 
     function updateList(todos) {
+        clear();
         for(let i = 0; i < todos.length; i++) {
             let todo = todos[i];
             addItem(todo);
@@ -19,7 +22,7 @@ export default function todoListComponent() {
             ul.removeChild(ul.firstChild);
         }
     }
-
+    
     return {
         getListElement() {
             return ul;
@@ -41,4 +44,6 @@ function TodoItemComponent(id, title, description, date) {
     dateElement.textContent = date;
 
     listItem.append(titleElement, dateElement);
+
+    return listItem;
 }
