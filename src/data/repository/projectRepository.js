@@ -22,11 +22,15 @@ const projectRepository = (() => {
         return data;
     }
     
+    const getProjectWithId = (id) => {
+        return localStorage.getProjectWithId(id);
+    }
     update();
-    
+
     return {
         addProject, 
-        getAllProjects
+        getAllProjects,
+        getProjectWithId
     }
 
     
