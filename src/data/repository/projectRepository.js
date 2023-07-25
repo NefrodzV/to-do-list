@@ -19,6 +19,7 @@ const projectRepository = (() => {
     }
 
     const getAllProjects = () => {
+        update();
         return data;
     }
     
@@ -27,6 +28,7 @@ const projectRepository = (() => {
     }
 
     const updateProject = (project) => {
+        
         localStorage.updateProject(project);
         console.log('Updating project');
     }
