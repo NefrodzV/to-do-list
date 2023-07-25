@@ -1,4 +1,4 @@
-export default function createTodo(title, description, date, completeState = false) {
+export default function createTodo(title, description, date = 'No date set', completeState = false) {
     
     const getObject = () => {
         return {
@@ -15,7 +15,7 @@ export default function createTodo(title, description, date, completeState = fal
         getTitle() {return title;},
         getDescription() {return description;},
         getDate() {return date;},
-        getCompletitionState() {return completeState;},
+        getCompleteState() {return completeState;},
         setTitle(value){title = value;},
         setDescription(value) {description = value;},
         setDate(value) {date = value;},
