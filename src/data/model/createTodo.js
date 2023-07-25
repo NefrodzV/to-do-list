@@ -15,6 +15,10 @@ export default function createTodo(title, description, date, completeState = fal
         getTitle() {return title;},
         getDescription() {return description;},
         getDate() {return date;},
-        getCompletitionState() {return completeState;}
+        getCompletitionState() {return completeState;},
+        setTitle(value){title = value;},
+        setDescription(value) {description = value;},
+        setDate(value) {date = value;},
+        updateCompleteState(boolean) {completeState = boolean;}
     }
 }
