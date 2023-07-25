@@ -1,9 +1,9 @@
 export default function Transform() {
 
     let oldElement;
+    
 
     function replaceElement(element, elementType, type, value, callback) {
-
         oldElement = element;
         
         const newElement = document.createElement(elementType);
@@ -11,22 +11,19 @@ export default function Transform() {
         newElement.value = value;
         
         newElement.addEventListener('keypress', (event) => {
-            
             if(event.key === "Enter"){
                 event.preventDefault();
-                callback(element.value);
-                undoTransform(newElement);
+                callback(newElement.value);
+                event.target.blur();
             }
-        })
-
-        newElement.addEventListener('focusout', () => {
-            if(!document.body.contains(newElement)) return;
-            undoTransform(newElement)
         });
 
+        newElement.addEventListener('focusout', (event) => {
+            undoTransform(newElement);
+        });
+    
         oldElement.replaceWith(newElement);
         newElement.focus();
-        console.log(newElement);
     }
 
     function undoTransform(newElement) {
