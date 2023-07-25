@@ -1,10 +1,7 @@
 export default function Transform() {
 
-    let oldElement;
-    
-
-    function replaceElement(element, elementType, type, value, callback) {
-        oldElement = element;
+    function replaceElement(oldElement, elementType, type, value, callback) {
+        
         
         const newElement = document.createElement(elementType);
         newElement.type = type;
@@ -19,20 +16,19 @@ export default function Transform() {
         });
 
         newElement.addEventListener('focusout', (event) => {
-            undoTransform(newElement);
+            undoTransform(newElement, oldElement);
         });
     
         oldElement.replaceWith(newElement);
         newElement.focus();
     }
 
-    function undoTransform(newElement) {
+    function undoTransform(newElement, oldElement) {
         newElement.replaceWith(oldElement);
     } 
 
     return {
-        replaceElement, 
-        undoTransform
+        replaceElement
     }
     
 }
