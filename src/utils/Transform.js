@@ -1,11 +1,12 @@
 export default function Transform() {
 
     function replaceElement(oldElement, elementType, type, value, callback) {
-        
-        
         const newElement = document.createElement(elementType);
         newElement.type = type;
         newElement.value = value;
+        if(type === 'date') {
+            newElement.style.marginInlineStart = 'auto';
+        }
         
         newElement.addEventListener('keypress', (event) => {
             if(event.key === "Enter"){
