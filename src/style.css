@@ -130,6 +130,9 @@ main {
 }
 
 .layer-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
     padding :16px;
     background-color: var(--secondary-color);
@@ -140,6 +143,12 @@ main {
     overflow: hidden;
 }
 
+.add-todo-button {
+    font-size: x-large;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
 .close-button {
     border-radius: 5px;
     margin-inline-start: auto;
