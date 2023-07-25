@@ -111,7 +111,7 @@ main {
     position: relative;
     padding: 16px;
     background-color: var(--secondary-color);
-    overflow-y: auto;
+    
 }
 .layer {
     display: none;
@@ -130,14 +130,19 @@ main {
 }
 
 .layer-container {
+    border-radius: 5px;
+    padding :16px;
     background-color: var(--secondary-color);
     width: 50%;
     height: 90%;
     margin: auto 0;
+    box-shadow: 0px 3px 3px var(--primary-color);
+    overflow: hidden;
 }
 
 .close-button {
-    margin: 1% 1% 1% auto;
+    border-radius: 5px;
+    margin-inline-start: auto;
     cursor: pointer;
     display: block;
     background-color: var(--accent-color);
@@ -145,7 +150,28 @@ main {
     outline: var(--primary-color);
 }
 
+.layer-title {
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    font-weight: 900;
+}
+.layer-description {
+    color: var(--primary-text-color);
+    font-size: .8rem;
+}
 
+.todo-component {
+    color: var(--primary-text-color);
+    font-size: 1.8;
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--accent-color);
+    align-items: center;
+    padding:8px;
+    margin-bottom: 4px;
+    box-shadow: 0px 1px 1px var(--primary-color);
+    border-radius: 5px;
+}
 .list-header {
     text-transform: uppercase;
 }
@@ -197,9 +223,6 @@ footer > a {
 }
 
 /* Form */
-
-
-
 ::placeholder {
     color: var(--accent-color);
 }
@@ -275,6 +298,11 @@ textarea {
 input {
     min-height: 1.5rem;
 }
+
+.error {
+    border-color: red;
+}
+
 input, textarea {
     border: 3px solid var(--accent-color);
     margin-block: 3px;
@@ -284,10 +312,6 @@ input, textarea {
     color: var(--primary-text-color);
     outline-color: var(--primary--color);
 }
-input:invalid {
-    border-color: red;
-}
-
 
 input:focus, textarea:focus {
     border-color: var(--primary--color);
@@ -307,13 +331,13 @@ input:focus, textarea:focus {
     margin-bottom: 4px;
     box-shadow: 0px 1px 1px var(--primary-color);
 }
-.todo > p {
+/* .todo > p {
 
     overflow: hidden;
     text-overflow: ellipsis;
     width: 15ch;
     white-space: nowrap;
-}
+} */
 
 .todo > button {
     background-color: var(--primary-color);
@@ -325,18 +349,6 @@ input:focus, textarea:focus {
 
 }
 
-.error {
-    border-color: red;
-}
-
-
- 
-
-
-
-
-
-
 
 /* RESET */
 
@@ -347,4 +359,6 @@ h1, h2, h3 {
 
 ul {
     padding: 0;
+    overflow-y: auto;
+    overflow: hidden;
 }

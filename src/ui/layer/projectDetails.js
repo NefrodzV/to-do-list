@@ -18,9 +18,11 @@ export default function projectDetails(closeFunction) {
         closeFunction();
     });
 
-    const title = document.createElement('h2');
+    const title = document.createElement('p');
+    title.classList.add('layer-title');
     title.textContent = "Project title";
-    const description = document.createElement('h4');
+    const description = document.createElement('p');
+    description.classList.add('layer-description');
     description.textContent = 'project description';
 
     const todosListComponent = todoListComponent();
@@ -35,9 +37,7 @@ export default function projectDetails(closeFunction) {
         console.log(project);
         update();
     }
-
     
-
     events.on('updateProjectDetails', getDataFromSource);
 
     container.append(closeButton, title, description, todosListComponent.getListElement());
