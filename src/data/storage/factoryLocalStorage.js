@@ -7,15 +7,16 @@ export default function factoryLocalStorage() {
     const add = (project) => {
         let index = storage.length;
         
-        console.log(index)
-        
         let projectJSON = JSON.stringify(project);
         
         storage.setItem(index, projectJSON);
+    }
     
+    const updateProject = (project) => {
+        let projectJson = JSON.stringify(project);
+        storage.setItem(project.getId(), projectJson);
     }
 
-    // storage.clear();
     const getAll = () => {
         const projects = [];
         for(let i = 0; i < storage.length; i++) {
@@ -44,12 +45,14 @@ export default function factoryLocalStorage() {
         return project;
     }
 
+    
     const getLastId = () => {
         return storage.length;
     }
 
     return {
         add, 
+        updateProject,
         getAll,
         getLastId,
         getProjectWithId
