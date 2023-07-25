@@ -1,11 +1,13 @@
+import Transform from "../../utils/Transform";
+
 export default function todoListComponent() {
 
     const ul = document.createElement('ul');
-
+    
     function addItem(todo) {
         console.log()
         console.log(todo);
-        const item = TodoItemComponent(todo.getTitle(), todo.getDescription(), todo.getDate());
+        const item = TodoItemComponent(todo);
         ul.appendChild(item);
     }
 
@@ -31,17 +33,27 @@ export default function todoListComponent() {
     }
 }
 
-function TodoItemComponent(id, title, description, date) {
-    const STYLE = 'todo';
+function TodoItemComponent(todo) {
+    
+    const transform = Transform();
+
+    const STYLE = 'todo-component';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
-    listItem.classList.add('corner');
 
     const titleElement = document.createElement('p');
-    titleElement.textContent = title;
+    titleElement.textContent = todo.getTitle();
+    titleElement.addEventListener('click', (event) => {
+        transform.replaceElement(titleElement, 'input', "text" , todo.getTitle(), () => {
+            console.log("update the todo property");
+            // todo.setTitle(value);
+            // console.log(todo);
+        })
+    })
 
     const dateElement = document.createElement('p');
-    dateElement.textContent = date;
+    
+    dateElement.textContent = todo.getDate();
 
     listItem.append(titleElement, dateElement);
 
