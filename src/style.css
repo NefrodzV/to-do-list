@@ -143,6 +143,11 @@ main {
     overflow: hidden;
 }
 
+.layer-list {
+    height: 100%;
+    margin-block: 0;
+    overflow-y: scroll;
+}
 .add-todo-button {
     font-size: x-large;
     position: absolute;
@@ -171,16 +176,34 @@ main {
 
 .todo-component {
     color: var(--primary-text-color);
-    font-size: 1.8;
-    display:flex;
-    justify-content: space-between;
+    font-size: 1rem;
     background-color: var(--accent-color);
-    align-items: center;
+   
     padding:8px;
     margin-bottom: 4px;
     box-shadow: 0px 1px 1px var(--primary-color);
     border-radius: 5px;
 }
+.todo-main-container {
+    display: flex;
+    gap: 16px; 
+    align-items: center;
+}
+
+.todo-checkbox {
+    accent-color: var(--primary-color);
+    width: 25px;
+    height: 25px;
+}
+.todo-description {
+    display: none;
+}
+
+.todo-description[visible] {
+    display: block;
+    font-size: 1.5rem;
+}
+
 .list-header {
     text-transform: uppercase;
 }
