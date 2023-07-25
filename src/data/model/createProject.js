@@ -1,9 +1,5 @@
 export default function createProject(id, title, description, todos) {
     
-    
-    // const setId = (id) => {
-    //     id = id;
-    // }
     const getId = () => { return id; }
 
     const getTitle = () => {return title;}
@@ -15,7 +11,7 @@ export default function createProject(id, title, description, todos) {
     const getTodos = () => {
         return todos;
     }
-
+    
     // For serializing
     const getObject = () => {
         return { id, title, description, todos};
@@ -23,11 +19,17 @@ export default function createProject(id, title, description, todos) {
     const toJSON = () => {
         return getObject();
     }
+    const addTodo = (todo) => {
+        todos.push(todo);
+    }
     return {
         toJSON,
         getId,
         getDescription,
         getTitle, 
-        getTodos
+        getTodos,
+        setTitle(value) {title = value;},
+        setDescription(value) {description = value;},
+        addTodo
     }
 }
