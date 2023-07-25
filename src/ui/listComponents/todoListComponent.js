@@ -1,15 +1,14 @@
 import createTodo from "../../data/model/createTodo";
 import events from "../../events";
 import Transform from "../../utils/Transform";
-import projectRepository from "../../data/repository/projectRepository";
 
 export default function todoListComponent() {
 
     let hasInputComponent = false;
 
     const ul = document.createElement('ul');
-    ul.style.height = '100%';
-    ul.style.marginBlock = '0';
+    
+    ul.classList.add('layer-list');
     
     function addItem(todo) {
         console.log()
@@ -33,13 +32,13 @@ export default function todoListComponent() {
     }
 
     function addInputComponent() {
-        
         if(hasInputComponent)  return;
         let inputComponent = InputItemComponent()
         ul.appendChild(inputComponent.li);
         inputComponent.setFocus();
     }
 
+    // Class
     function InputItemComponent() {
         hasInputComponent = true;
         const li = document.createElement('li');
@@ -55,10 +54,8 @@ export default function todoListComponent() {
                 events.emit('addTodo', todo);
                 addItem(todo);
                 events.emit('updateProject');
-                events.emit('updateProjectList', projectRepository.getAllProjects());
                 event.preventDefault();
                 event.target.blur();
-                
             }
         });
 
@@ -91,7 +88,10 @@ function TodoItemComponent(todo) {
     const STYLE = 'todo-component';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
+    listItem.addEventListener('click', () => {
 
+    })
+    
     // TODO: Update the todo in the project class and local storage.
     const titleElement = document.createElement('p');
     titleElement.textContent = todo.getTitle();
@@ -104,8 +104,9 @@ function TodoItemComponent(todo) {
     })
     
     const dateElement = document.createElement('p');
+    dateElement.style.marginInlineStart = 'auto';
     dateElement.addEventListener('click', () => {
-        transform.replaceElement(dateElement, 'input', "date" , todo.getTitle(), (value) => {
+        transform.replaceElement(dateElement, 'input', "date" , todo.getTitle(),  (value) => {
             todo.setDate(value);
             update(dateElement, todo.getDate());
             events.emit('updateProject');
@@ -116,19 +117,27 @@ function TodoItemComponent(todo) {
 
     const checkBoxElement = document.createElement('input');
     checkBoxElement.type = 'checkbox';
-    if(todo.getCompleteState()) {
-        checkBoxElement.setAttribute('checked');
-    }
+    checkBoxElement.classList.add('todo-checkbox');
+    checkBoxElement.checked = todo.getCompleteState();
+    checkBoxElement.addEventListener('click', () => {
+        console.log('checkbox value is:' + checkBoxElement.checked);
+        todo.updateCompleteState(checkBoxElement.checked);
+        events.emit('updateProject');
+    })
     
+    const mainItemContainer = document.createElement('div');
+    mainItemContainer.classList.add('todo-main-container');
+    mainItemContainer.append(titleElement, dateElement, checkBoxElement);
 
+    const descriptionContainer = document.createElement('div');
+    descriptionContainer.classList.add('todo-description');
+    descriptionContainer.textContent = todo.getDescription();
 
-    listItem.append(titleElement, dateElement, checkBoxElement);
+    listItem.append(mainItemContainer, descriptionContainer);
 
     function update(target, value) {
         target.textContent = value;
     }
-
-
 
     return listItem;
 }
