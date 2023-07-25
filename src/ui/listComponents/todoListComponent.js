@@ -1,3 +1,4 @@
+import events from "../../events";
 import Transform from "../../utils/Transform";
 
 export default function todoListComponent() {
@@ -48,10 +49,18 @@ function TodoItemComponent(todo) {
         transform.replaceElement(titleElement, 'input', "text" , todo.getTitle(), (value) => {
             todo.setTitle(value);
             update(titleElement, todo.getTitle());
+            events.emit('updateProject');
         })
     })
-
+    
     const dateElement = document.createElement('p');
+    dateElement.addEventListener('click', () => {
+        transform.replaceElement(dateElement, 'input', "date" , todo.getTitle(), (value) => {
+            todo.setDate(value);
+            update(dateElement, todo.getDate());
+            events.emit('updateProject');
+        })
+    })
     
     dateElement.textContent = todo.getDate();
 
