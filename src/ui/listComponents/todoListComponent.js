@@ -41,13 +41,13 @@ function TodoItemComponent(todo) {
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
 
+    // TODO: Update the todo in the project class and local storage.
     const titleElement = document.createElement('p');
     titleElement.textContent = todo.getTitle();
-    titleElement.addEventListener('click', (event) => {
-        transform.replaceElement(titleElement, 'input', "text" , todo.getTitle(), () => {
-            console.log("update the todo property");
-            // todo.setTitle(value);
-            // console.log(todo);
+    titleElement.addEventListener('click', () => {
+        transform.replaceElement(titleElement, 'input', "text" , todo.getTitle(), (value) => {
+            todo.setTitle(value);
+            update(titleElement, todo.getTitle());
         })
     })
 
@@ -56,6 +56,10 @@ function TodoItemComponent(todo) {
     dateElement.textContent = todo.getDate();
 
     listItem.append(titleElement, dateElement);
+
+    function update(target, value) {
+        target.textContent = value;
+    }
 
     return listItem;
 }
