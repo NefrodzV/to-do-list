@@ -1,9 +1,15 @@
+import createTodo from "../../data/model/createTodo";
 import events from "../../events";
 import Transform from "../../utils/Transform";
+import projectRepository from "../../data/repository/projectRepository";
 
 export default function todoListComponent() {
 
+    let hasInputComponent = false;
+
     const ul = document.createElement('ul');
+    ul.style.height = '100%';
+    ul.style.marginBlock = '0';
     
     function addItem(todo) {
         console.log()
@@ -25,12 +31,56 @@ export default function todoListComponent() {
             ul.removeChild(ul.firstChild);
         }
     }
-    
+
+    function addInputComponent() {
+        
+        if(hasInputComponent)  return;
+        let inputComponent = InputItemComponent()
+        ul.appendChild(inputComponent.li);
+        inputComponent.setFocus();
+    }
+
+    function InputItemComponent() {
+        hasInputComponent = true;
+        const li = document.createElement('li');
+        li.classList.add('todo-component');
+        
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = "Enter title";
+        
+        input.addEventListener('keypress', (event) => {
+            if(event.key === "Enter"){
+                let todo = createTodo(input.value);
+                events.emit('addTodo', todo);
+                addItem(todo);
+                events.emit('updateProject');
+                events.emit('updateProjectList', projectRepository.getAllProjects());
+                event.preventDefault();
+                event.target.blur();
+                
+            }
+        });
+
+        input.addEventListener('focusout', () => {
+            hasInputComponent = false;
+            li.remove();
+        })
+        li.appendChild(input)
+        input.focus();
+        return {
+            li,
+            setFocus () {
+                input.focus();
+            }
+        };
+    }
     return {
         getListElement() {
             return ul;
         },
         updateList,
+        addInputComponent
     }
 }
 
@@ -64,11 +114,22 @@ function TodoItemComponent(todo) {
     
     dateElement.textContent = todo.getDate();
 
-    listItem.append(titleElement, dateElement);
+    const checkBoxElement = document.createElement('input');
+    checkBoxElement.type = 'checkbox';
+    if(todo.getCompleteState()) {
+        checkBoxElement.setAttribute('checked');
+    }
+    
+
+
+    listItem.append(titleElement, dateElement, checkBoxElement);
 
     function update(target, value) {
         target.textContent = value;
     }
 
+
+
     return listItem;
 }
+
