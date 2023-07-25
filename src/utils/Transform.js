@@ -1,34 +1,35 @@
 export default function Transform() {
 
-    function replaceElement(oldElement, elementType, type, value, updateFunction) {
-        console.log("transform function running");
-        const element = document.createElement(elementType);
-        element.type = type;
-        element.value = value;
+    let oldElement;
+
+    function replaceElement(element, elementType, type, value, callback) {
+
+        oldElement = element;
         
-        element.addEventListener('keypress', (event) => {
+        const newElement = document.createElement(elementType);
+        newElement.type = type;
+        newElement.value = value;
+        
+        newElement.addEventListener('keypress', (event) => {
             
             if(event.key === "Enter"){
                 event.preventDefault();
-                console.log("Enter pressed");
-                updateFunction()
-                console.log(element.value);
-                oldElement.textContent = element.value;
-                undoTransform(oldElement, element);
+                callback(element.value);
+                undoTransform(newElement);
             }
         })
 
-        element.addEventListener('focusout', (event)  => {
-            console.log("input lost focus");
-            undoTransform(oldElement, element);
+        newElement.addEventListener('focusout', () => {
+            if(!document.body.contains(newElement)) return;
+            undoTransform(newElement)
+        });
 
-        })
-
-        oldElement.replaceWith(element);
-        element.focus();
+        oldElement.replaceWith(newElement);
+        newElement.focus();
+        console.log(newElement);
     }
 
-    function undoTransform(oldElement, newElement) {
+    function undoTransform(newElement) {
         newElement.replaceWith(oldElement);
     } 
 
