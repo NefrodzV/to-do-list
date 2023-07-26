@@ -22,8 +22,14 @@ export default function factoryLocalStorage() {
         for(let i = 0; i < storage.length; i++) {
             let projectJson = storage[i];
             let obj = JSON.parse(projectJson);
-            console.log(storage);
-            let project = createProject(obj.id, obj.title, obj.description, obj.todos);
+
+            let todos = [];
+            for(let i = 0; i < obj.todos.length; i++) {
+                let todoObj = obj.todos[i];
+                let todo = createTodo(todoObj.title, todoObj.description, todoObj.date, todoObj.completeState);
+                todos.push(todo);
+            }
+            let project = createProject(obj.id, obj.title, obj.description, todos);
            
             projects.push(project);
         }
