@@ -88,10 +88,15 @@ function TodoItemComponent(todo) {
     const STYLE = 'todo-component';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
-    listItem.addEventListener('click', () => {
 
+    listItem.addEventListener('click', () => {
+        console.log('clickpressed');
     })
-    
+    listItem.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+        console.log('right click pressed');
+    });
+
     // TODO: Update the todo in the project class and local storage.
     const titleElement = document.createElement('p');
     titleElement.textContent = todo.getTitle();
@@ -101,7 +106,9 @@ function TodoItemComponent(todo) {
             update(titleElement, todo.getTitle());
             events.emit('updateProject');
         })
-    })
+    });
+
+    
     
     const dateElement = document.createElement('p');
     dateElement.style.marginInlineStart = 'auto';
@@ -125,15 +132,24 @@ function TodoItemComponent(todo) {
         events.emit('updateProject');
     })
     
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'X';
+    deleteButton.classList.add('delete-item-button');
+    deleteButton.addEventListener('click', () => {
+        console.log('deleting todo');
+    })
+
     const mainItemContainer = document.createElement('div');
     mainItemContainer.classList.add('todo-main-container');
-    mainItemContainer.append(titleElement, dateElement, checkBoxElement);
+    mainItemContainer.append(titleElement, dateElement, checkBoxElement, deleteButton);
 
     const descriptionContainer = document.createElement('div');
     descriptionContainer.classList.add('todo-description');
     descriptionContainer.textContent = todo.getDescription();
 
     listItem.append(mainItemContainer, descriptionContainer);
+
+
 
     function update(target, value) {
         target.textContent = value;
