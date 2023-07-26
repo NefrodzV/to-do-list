@@ -148,13 +148,34 @@ main {
     margin-block: 0;
     overflow-y: scroll;
 }
-.add-todo-button {
-    font-size: x-large;
+.layer-add-todo-button, .layer-delete-button {
+    width: 120px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    font-size: large;
+}
+
+.delete-item-button {
+    display: none;
+}
+
+.delete-item-button [visible] {
+    display: block;
+    width: 25px;
+    height: 25px;
+    font-size: 100%;
+    accent-color: red;
+}
+
+.controls-container {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    display: flex;
+    gap: 16px;
 }
 .close-button {
+    width: 25px;
+    height: 25px;
+    font-size: 100%;
     border-radius: 5px;
     margin-inline-start: auto;
     cursor: pointer;
