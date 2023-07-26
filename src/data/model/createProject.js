@@ -22,6 +22,16 @@ export default function createProject(id, title, description, todos) {
     const addTodo = (todo) => {
         todos.push(todo);
     }
+
+    const deleteTodo = (todo) => {
+        console.log('deleting todo');
+        for(let i = 0; i < todos.length; i++) {
+            if(todo.getTitle() === todos[i].getTitle()) {
+                console.log('found a match deleting');
+                todos.splice(i, 1);
+            }
+        }
+    }
     return {
         toJSON,
         getId,
@@ -30,6 +40,7 @@ export default function createProject(id, title, description, todos) {
         getTodos,
         setTitle(value) {title = value;},
         setDescription(value) {description = value;},
-        addTodo
+        addTodo,
+        deleteTodo
     }
 }

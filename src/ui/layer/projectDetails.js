@@ -78,20 +78,25 @@ export default function projectDetails(closeFunction) {
         console.log(project);
         updateFields();
     }
-    
+    events.on('updateProjectDetails', getDataFromSource);
+
     function addTodoToProject(todo) {
         project.addTodo(todo);
         updateProject();
     }
     events.on('addTodo', addTodoToProject);
-    events.on('updateProjectDetails', getDataFromSource);
-
+    
     function updateProject() {
         projectRepository.updateProject(project);
         events.emit('updateProjectList', projectRepository.getAllProjects());
     }
-    
     events.on('updateProject', updateProject);
+
+    function deleteTodo(todo) {
+        project.deleteTodo(todo);
+        updateProject();
+    }
+    events.on('deleteTodo', deleteTodo);
 
     container.append(closeButton, title, description, todosListComponent.getListElement(), controlsContainer);
 

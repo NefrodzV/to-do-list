@@ -1,6 +1,7 @@
 import createTodo from "../../data/model/createTodo";
 import events from "../../events";
 import Transform from "../../utils/Transform";
+import deleteIcon from "../../asset/icon-delete.png";
 
 export default function todoListComponent() {
 
@@ -11,8 +12,6 @@ export default function todoListComponent() {
     ul.classList.add('layer-list');
     
     function addItem(todo) {
-        console.log()
-        console.log(todo);
         const item = TodoItemComponent(todo);
         ul.appendChild(item);
     }
@@ -91,15 +90,13 @@ function TodoItemComponent(todo) {
 
     listItem.addEventListener('click', () => {
         console.log('clickpressed');
+        deleteButton.toggleAttribute('visible');
     })
-    listItem.addEventListener('contextmenu', (event) => {
-        event.preventDefault();
-        console.log('right click pressed');
-    });
+    
 
-    // TODO: Update the todo in the project class and local storage.
     const titleElement = document.createElement('p');
     titleElement.textContent = todo.getTitle();
+    titleElement.classList.add('todo-component-title');
     titleElement.addEventListener('click', () => {
         transform.replaceElement(titleElement, 'input', "text" , todo.getTitle(), (value) => {
             todo.setTitle(value);
@@ -108,10 +105,10 @@ function TodoItemComponent(todo) {
         })
     });
 
-    
-    
     const dateElement = document.createElement('p');
-    dateElement.style.marginInlineStart = 'auto';
+    dateElement.classList.add('todo-component-date');    
+    dateElement.textContent = todo.getDate();
+
     dateElement.addEventListener('click', () => {
         transform.replaceElement(dateElement, 'input', "date" , todo.getTitle(),  (value) => {
             todo.setDate(value);
@@ -120,7 +117,6 @@ function TodoItemComponent(todo) {
         })
     })
     
-    dateElement.textContent = todo.getDate();
 
     const checkBoxElement = document.createElement('input');
     checkBoxElement.type = 'checkbox';
@@ -133,27 +129,39 @@ function TodoItemComponent(todo) {
     })
     
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'X';
+    const deleteImage = new Image();
+    deleteImage.src = deleteIcon;
+    const container = document.createElement('div');
+    container.appendChild(deleteImage);
+    deleteButton.appendChild(container);
     deleteButton.classList.add('delete-item-button');
     deleteButton.addEventListener('click', () => {
-        console.log('deleting todo');
+        events.emit('deleteTodo', todo);
+        listItem.remove();
     })
 
     const mainItemContainer = document.createElement('div');
     mainItemContainer.classList.add('todo-main-container');
     mainItemContainer.append(titleElement, dateElement, checkBoxElement, deleteButton);
 
-    const descriptionContainer = document.createElement('div');
-    descriptionContainer.classList.add('todo-description');
-    descriptionContainer.textContent = todo.getDescription();
+    const todoDescription = document.createElement('p');
+    todoDescription.classList.add('todo-component-description');
+    todoDescription.textContent = todo.getDescription();
 
-    listItem.append(mainItemContainer, descriptionContainer);
-
-
+    listItem.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+        transform.replaceElement(todoDescription, 'input', 'text', todo.getDescription(), (value) => {
+            todo.setDescription(value);
+            events.emit('updateProject');
+            update(todoDescription, value);
+        });
+    });
+    listItem.append(mainItemContainer, todoDescription);
 
     function update(target, value) {
         target.textContent = value;
     }
+
 
     return listItem;
 }
