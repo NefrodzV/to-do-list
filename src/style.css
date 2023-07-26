@@ -156,10 +156,26 @@ main {
 }
 
 .delete-item-button {
-    display: none;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border-color: black;
+    background-color: var(--accent-color);
+}
+.delete-item-button> div {
+    
+    width: 100%;
+    height: 100%;
 }
 
-.delete-item-button [visible] {
+.delete-item-button> div > img {
+    
+    width: 100%;
+    height: 100%;
+}
+
+.delete-item-button[visible] {
     display: block;
     width: 25px;
     height: 25px;
@@ -199,29 +215,42 @@ main {
     color: var(--primary-text-color);
     font-size: 1rem;
     background-color: var(--accent-color);
-   
     padding:8px;
     margin-bottom: 4px;
     box-shadow: 0px 1px 1px var(--primary-color);
     border-radius: 5px;
 }
+.todo-component-title {
+    text-transform: capitalize;
+    width: 400px;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.todo-component-date {
+    margin: 0;
+    margin-inline: auto;
+    font-size: .8rem;
+}
 .todo-main-container {
     display: flex;
-    gap: 16px; 
     align-items: center;
 }
 
-.todo-checkbox {
+.todo-checkbox {margin-inline: auto 16px;
     accent-color: var(--primary-color);
     width: 25px;
     height: 25px;
 }
-.todo-description {
-    display: none;
+.todo-component-description {
+    text-transform: capitalize;
+    display: block;
+    font-size: .7rem;
+    margin: 0;
 }
 
 .todo-description[visible] {
-    display: block;
+    
     font-size: 1.5rem;
 }
 
