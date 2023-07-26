@@ -1,5 +1,16 @@
 export default function createProject(id, title, description, todos) {
     
+    const getCompletedTodosTotal = () => {
+        let counter = 0;
+        for(let i = 0; i < todos.length; i++) {
+            console.log(todos[i])
+            if(todos[i].getCompleteState()) {
+                counter++;
+            }
+        }
+
+        return `${counter}/${todos.length}`;
+    }
     const getId = () => { return id; }
 
     const getTitle = () => {return title;}
@@ -32,6 +43,7 @@ export default function createProject(id, title, description, todos) {
             }
         }
     }
+
     return {
         toJSON,
         getId,
@@ -41,6 +53,7 @@ export default function createProject(id, title, description, todos) {
         setTitle(value) {title = value;},
         setDescription(value) {description = value;},
         addTodo,
-        deleteTodo
+        deleteTodo,
+        getCompletedTodosTotal
     }
 }
