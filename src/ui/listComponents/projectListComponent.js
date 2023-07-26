@@ -16,7 +16,7 @@ export default function projectListComponent(projects, itemCallback) {
     })();
 
     function addItem(project) {
-        const item = projectItemComponent(project.getId(), project.getTitle(), itemCallback);
+        const item = projectItemComponent(project, itemCallback);
         ul.appendChild(item);
     }
 
@@ -44,21 +44,21 @@ export default function projectListComponent(projects, itemCallback) {
     }
 }
 
-function projectItemComponent(id, title, itemCallback) {
+function projectItemComponent(project, itemCallback) {
     const STYLE = 'project';
 
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
     listItem.addEventListener('click', () => {
-        itemCallback(id);
+        itemCallback(project.getId());
     })
 
     const titlePara = document.createElement('p');
-    titlePara.textContent = title;
+    titlePara.textContent = project.getTitle();
     titlePara.classList.add('project-title');
 
     const completionSpan = document.createElement('span');
-    completionSpan.textContent = '8/12';
+    completionSpan.textContent = project.getCompletedTodosTotal();
 
     listItem.append(titlePara, completionSpan);
 
