@@ -45,12 +45,25 @@ export default function projectDetails(closeFunction) {
 
     const todosListComponent = todoListComponent();
 
+    const controlsContainer =  document.createElement('div');
+    controlsContainer.classList.add('controls-container');
+
+    
     const addTodoButton = document.createElement('button');
-    addTodoButton.classList.add('add-todo-button');
+    addTodoButton.classList.add('layer-add-todo-button');
     addTodoButton.textContent = '+ Add Todo';
     addTodoButton.addEventListener('click', () => {
         todosListComponent.addInputComponent();
     });
+
+    const deleteTodoButton = document.createElement('button');
+    deleteTodoButton.textContent = "Delete";
+    deleteTodoButton.classList.add('layer-delete-button');
+    deleteTodoButton.addEventListener('click', () => {
+
+    })
+
+    controlsContainer.append(addTodoButton, deleteTodoButton);
 
     function update(target, value) {
         target.textContent = value;
@@ -75,11 +88,12 @@ export default function projectDetails(closeFunction) {
 
     function updateProject() {
         projectRepository.updateProject(project);
+        events.emit('updateProjectList', projectRepository.getAllProjects());
     }
     
     events.on('updateProject', updateProject);
 
-    container.append(closeButton, title, description, todosListComponent.getListElement(), addTodoButton);
+    container.append(closeButton, title, description, todosListComponent.getListElement(), controlsContainer);
 
     return container;
 }
