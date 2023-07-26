@@ -3,7 +3,6 @@ export default function createProject(id, title, description, todos) {
     const getCompletedTodosTotal = () => {
         let counter = 0;
         for(let i = 0; i < todos.length; i++) {
-            console.log(todos[i])
             if(todos[i].getCompleteState()) {
                 counter++;
             }
