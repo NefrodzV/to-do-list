@@ -52,8 +52,13 @@ export default function factoryLocalStorage() {
     }
 
     
+    
     const getLastId = () => {
         return storage.length;
+    }
+
+    const removeProject = (identifier) => {
+        storage.removeItem(identifier.toString());
     }
 
     return {
@@ -61,6 +66,7 @@ export default function factoryLocalStorage() {
         updateProject,
         getAll,
         getLastId,
-        getProjectWithId
+        getProjectWithId,
+        removeProject
     }
 }

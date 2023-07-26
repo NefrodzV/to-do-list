@@ -54,13 +54,16 @@ export default function projectDetails(closeFunction) {
     addTodoButton.textContent = '+ Add Todo';
     addTodoButton.addEventListener('click', () => {
         todosListComponent.addInputComponent();
+        
     });
 
     const deleteTodoButton = document.createElement('button');
     deleteTodoButton.textContent = "Delete";
     deleteTodoButton.classList.add('layer-delete-button');
     deleteTodoButton.addEventListener('click', () => {
-
+        closeFunction()
+        projectRepository.removeProject(project.getId());
+        events.emit('updateProjectList', projectRepository.getAllProjects());
     })
 
     controlsContainer.append(addTodoButton, deleteTodoButton);

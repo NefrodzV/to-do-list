@@ -28,9 +28,14 @@ const projectRepository = (() => {
     }
 
     const updateProject = (project) => {
-        
         localStorage.updateProject(project);
         console.log('Updating project');
+    }
+
+    const removeProject = (identifier) => {
+        console.log('deleting project');
+        console.log(identifier);
+        localStorage.removeProject(identifier);
     }
 
     update();
@@ -39,7 +44,8 @@ const projectRepository = (() => {
         addProject, 
         getAllProjects,
         getProjectWithId,
-        updateProject
+        updateProject, 
+        removeProject
     }
 
     
