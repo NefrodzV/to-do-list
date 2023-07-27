@@ -19,9 +19,8 @@ export default function projectDetails(closeFunction) {
     closeButton.textContent = "X";
     closeButton.addEventListener('click', () => {
         closeFunction();
-        
     });
-
+    
     const title = document.createElement('p');
     title.classList.add('layer-title');
     title.addEventListener('click', () => {
