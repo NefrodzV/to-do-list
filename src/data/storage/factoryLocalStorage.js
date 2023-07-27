@@ -35,7 +35,6 @@ export default function factoryLocalStorage() {
         }
         return projects;
     }
-
     storage.clear();
     const getProjectWithId = (id) => {
         let projectJSON = storage.getItem(id);
