@@ -57,6 +57,7 @@ export default function projectFormFactory() {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         errorField = false;
+        removeEmptyListMessage();
         console.log("submiting form......");
         validate();
         
@@ -198,15 +199,30 @@ export default function projectFormFactory() {
                 todosData.splice(i, 1);
                 break;
             }
-
         }
+    }
+
+    function showRegistryMessage() {
+        const message = document.createElement('div');
+        message.textContent = 'New project registered successful check your inbox!';
+        message.classList.add('registry-message');
+        form.appendChild(message);
+
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+
     }
 
     function submit() {
         let title = projectTitleInput.value;
         let description = projectDescriptionTextarea.value;
+
         
         projectRepository.addProject(title, description, todosData);
+
+        showRegistryMessage();
+
     }
     
     return form;
