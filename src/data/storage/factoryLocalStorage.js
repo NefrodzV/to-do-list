@@ -36,6 +36,7 @@ export default function factoryLocalStorage() {
         return projects;
     }
 
+    storage.clear();
     const getProjectWithId = (id) => {
         let projectJSON = storage.getItem(id);
         let obj = JSON.parse(projectJSON);
@@ -47,6 +48,7 @@ export default function factoryLocalStorage() {
             todos.push(todo);
         }
 
+        
         let project = createProject(obj.id, obj.title, obj.description, todos);
         return project;
     }
