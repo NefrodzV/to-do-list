@@ -1,3 +1,5 @@
+import { TodoMatcher } from "../../utils/TodoMatcher";
+
 export default function createProject(id, title, description, todos) {
     
     const getCompletedTodosTotal = () => {
@@ -34,13 +36,11 @@ export default function createProject(id, title, description, todos) {
     }
 
     const deleteTodo = (todo) => {
-        console.log('deleting todo');
-        for(let i = 0; i < todos.length; i++) {
-            if(todo.getTitle() === todos[i].getTitle()) {
-                console.log('found a match deleting');
-                todos.splice(i, 1);
-            }
-        }
+        let indexMatch = TodoMatcher().findTodoByTitle(todo, todos);
+        if(indexMatch === null) return;
+
+        todos.splice(indexMatch, 1);
+        
     }
 
     return {
