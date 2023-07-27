@@ -33,8 +33,6 @@ const projectRepository = (() => {
     }
 
     const removeProject = (identifier) => {
-        console.log('deleting project');
-        console.log(identifier);
         localStorage.removeProject(identifier);
     }
 

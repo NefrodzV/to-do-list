@@ -4,6 +4,7 @@ import { TodoMatcher } from "../../utils/TodoMatcher";
 
 export default function createProject(id, title, description, todos) {
     
+    
     const getCompletedTodosTotal = () => {
         let completed = CompleteTodosCounter().getTotal(todos);
         let total = todos.length;

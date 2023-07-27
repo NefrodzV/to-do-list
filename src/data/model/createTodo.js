@@ -16,9 +16,8 @@ export default function createTodo(title, description, date = 'No date set', com
         toJSON,
         getTitle() {return title;},
         getDescription() {return description;},
-        getDate() {
+    getDate() {
             if(date === 'No date set') return date;
-        
             return Formatter().formatDate(date);
         },
         getCompleteState() {return completeState;},

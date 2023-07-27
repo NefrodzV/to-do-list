@@ -211,7 +211,6 @@ export default function projectFormFactory() {
         setTimeout(() => {
             message.remove();
         }, 3000);
-
     }
 
     function submit() {
