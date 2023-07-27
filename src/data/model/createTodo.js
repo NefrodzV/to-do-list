@@ -1,3 +1,5 @@
+import Formatter from "../../utils/Formatter";
+
 export default function createTodo(title, description, date = 'No date set', completeState = false) {
     
     const getObject = () => {
@@ -14,7 +16,7 @@ export default function createTodo(title, description, date = 'No date set', com
         toJSON,
         getTitle() {return title;},
         getDescription() {return description;},
-        getDate() {return date;},
+        getDate() {return Formatter().formatDate(date);},
         getCompleteState() {return completeState;},
         setTitle(value){title = value;},
         setDescription(value) {description = value;},
