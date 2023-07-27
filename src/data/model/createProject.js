@@ -1,3 +1,4 @@
+import Sorter from "../../utils/Sorter";
 import { TodoMatcher } from "../../utils/TodoMatcher";
 
 export default function createProject(id, title, description, todos) {
@@ -21,6 +22,9 @@ export default function createProject(id, title, description, todos) {
     }
 
     const getTodos = () => {
+        if(todos.length > 1) {
+            Sorter().sortByDate(todos);
+        }
         return todos;
     }
     
