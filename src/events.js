@@ -24,7 +24,7 @@ let events = {
             this._events[eventName].forEach(function(fn){
                 fn(data);
             });
-        }
+        } 
     }
 }
 
