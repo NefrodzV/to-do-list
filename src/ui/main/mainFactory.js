@@ -7,6 +7,7 @@ export default function mainFactory() {
     const mainElement = document.createElement('main');
     const layer = layerFactory();
     
+    
     //Will only run once for when loading page
     (() => {
         mainElement.appendChild(inboxFactory());
