@@ -1,17 +1,13 @@
+import CompleteTodosCounter from "../../utils/CompleteTodoCounter";
 import Sorter from "../../utils/Sorter";
 import { TodoMatcher } from "../../utils/TodoMatcher";
 
 export default function createProject(id, title, description, todos) {
     
     const getCompletedTodosTotal = () => {
-        let counter = 0;
-        for(let i = 0; i < todos.length; i++) {
-            if(todos[i].getCompleteState()) {
-                counter++;
-            }
-        }
-
-        return `${counter}/${todos.length}`;
+        let completed = CompleteTodosCounter().getTotal(todos);
+        let total = todos.length;
+        return `${completed}/${total}`;
     }
     const getId = () => { return id; }
 
