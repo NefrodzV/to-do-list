@@ -676,7 +676,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarItemsFactory)\n/* harmony export */ });\n/* harmony import */ var _asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../asset/icon-inbox.png */ \"./src/asset/icon-inbox.png\");\n/* harmony import */ var _asset_icon_upcoming_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../asset/icon-upcoming.png */ \"./src/asset/icon-upcoming.png\");\n/* harmony import */ var _asset_icon_today_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../asset/icon-today.png */ \"./src/asset/icon-today.png\");\n/* harmony import */ var _asset_icon_add_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../asset/icon-add.png */ \"./src/asset/icon-add.png\");\n/* harmony import */ var _main_inboxFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../main/inboxFactory */ \"./src/ui/main/inboxFactory.js\");\n/* harmony import */ var _sidebarItemFactory__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sidebarItemFactory */ \"./src/ui/sidebar/sidebarItemFactory.js\");\n/* harmony import */ var _main_projectFormFactory__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../main/projectFormFactory */ \"./src/ui/main/projectFormFactory.js\");\n\n\n\n\n\n\n\n\nfunction sidebarItemsFactory() {\n\n    const sidebarItems = [\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(_asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__, 'inbox', (0,_main_inboxFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(), true),\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(_asset_icon_upcoming_png__WEBPACK_IMPORTED_MODULE_1__, 'upcoming'),\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(_asset_icon_today_png__WEBPACK_IMPORTED_MODULE_2__, 'today'),\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(_asset_icon_add_png__WEBPACK_IMPORTED_MODULE_3__, 'new project', (0,_main_projectFormFactory__WEBPACK_IMPORTED_MODULE_6__[\"default\"])()),\n    ];\n\n    return sidebarItems;\n}\n\n\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sidebarItemsFactory.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ sidebarItemsFactory)\n/* harmony export */ });\n/* harmony import */ var _asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../asset/icon-inbox.png */ \"./src/asset/icon-inbox.png\");\n/* harmony import */ var _asset_icon_add_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../asset/icon-add.png */ \"./src/asset/icon-add.png\");\n/* harmony import */ var _main_inboxFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main/inboxFactory */ \"./src/ui/main/inboxFactory.js\");\n/* harmony import */ var _sidebarItemFactory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sidebarItemFactory */ \"./src/ui/sidebar/sidebarItemFactory.js\");\n/* harmony import */ var _main_projectFormFactory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../main/projectFormFactory */ \"./src/ui/main/projectFormFactory.js\");\n\n\n\n\n\n\nfunction sidebarItemsFactory() {\n\n    const sidebarItems = [\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(_asset_icon_inbox_png__WEBPACK_IMPORTED_MODULE_0__, 'inbox', (0,_main_inboxFactory__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(), true),\n        (0,_sidebarItemFactory__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(_asset_icon_add_png__WEBPACK_IMPORTED_MODULE_1__, 'new project', (0,_main_projectFormFactory__WEBPACK_IMPORTED_MODULE_4__[\"default\"])()),\n    ];\n    \n    return sidebarItems;\n}\n\n\n\n//# sourceURL=webpack://to-do-list/./src/ui/sidebar/sidebarItemsFactory.js?");
 
 /***/ }),
 
@@ -807,26 +807,6 @@ eval("module.exports = __webpack_require__.p + \"1f148003550a19537bac.png\";\n\n
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"e7c37d50f8d56a263c45.png\";\n\n//# sourceURL=webpack://to-do-list/./src/asset/icon-logo.png?");
-
-/***/ }),
-
-/***/ "./src/asset/icon-today.png":
-/*!**********************************!*\
-  !*** ./src/asset/icon-today.png ***!
-  \**********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"22566a366ec86ca3652b.png\";\n\n//# sourceURL=webpack://to-do-list/./src/asset/icon-today.png?");
-
-/***/ }),
-
-/***/ "./src/asset/icon-upcoming.png":
-/*!*************************************!*\
-  !*** ./src/asset/icon-upcoming.png ***!
-  \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"d17e4f521bff5e27e66b.png\";\n\n//# sourceURL=webpack://to-do-list/./src/asset/icon-upcoming.png?");
 
 /***/ }),
 
