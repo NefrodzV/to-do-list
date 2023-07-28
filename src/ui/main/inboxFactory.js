@@ -9,8 +9,6 @@ export default function inboxFactory() {
     contentHeader.textContent = 'Inbox'; 
 
     const listComponent = projectListComponent(projectRepository.getAllProjects(), (id) => {
-        console.log('item id clicked is: ' + id)
-        console.log('view project data flow');
         events.emit('updateLayerVisibility');
         events.emit('updateProjectDetails', id);
     });
