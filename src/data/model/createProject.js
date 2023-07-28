@@ -39,9 +39,7 @@ export default function createProject(id, title, description, todos) {
     const deleteTodo = (todo) => {
         let indexMatch = TodoMatcher().findTodoByTitle(todo, todos);
         if(indexMatch === null) return;
-
         todos.splice(indexMatch, 1);
-        
     }
 
     return {

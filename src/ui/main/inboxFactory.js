@@ -12,7 +12,7 @@ export default function inboxFactory() {
         events.emit('updateLayerVisibility');
         events.emit('updateProjectDetails', id);
     });
-
+    
     const projectList = listComponent.getList();
 
     container.append(contentHeader, projectList);
