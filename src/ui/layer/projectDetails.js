@@ -42,6 +42,16 @@ export default function projectDetails(closeFunction) {
         })
     })
 
+    container.addEventListener('dblclick', (event) => {
+        event.preventDefault();
+        transform.replaceElement(description, 'input','text', project.getDescription(), (value) => {
+            project.setDescription(value);
+            update(description, project.getDescription());
+            updateProject();
+            
+        });
+    })
+
     const todosListComponent = todoListComponent();
 
     const controlsContainer =  document.createElement('div');
@@ -100,7 +110,12 @@ export default function projectDetails(closeFunction) {
     }
     events.on('deleteTodo', deleteTodo);
 
-    container.append(closeButton, title, description, todosListComponent.getListElement(), controlsContainer);
+    const instructions = document.createElement('p');
+    instructions.innerHTML = "->Right click in todo to add description <br> ->Click field to edit them <br> ->Double click to add project description";
+    instructions.style.fontSize = ".8rem";
+    instructions.style.height = 'max-content';
+
+    container.append(closeButton, title, description, todosListComponent.getListElement(), controlsContainer, instructions);
 
     return container;
 }
