@@ -1,4 +1,4 @@
-import { el } from "date-fns/locale";
+import getSystemDate from "./getSystemDate";
 
 export default function ElementCreator() {
     const createLegend = (text) => {
@@ -30,6 +30,10 @@ export default function ElementCreator() {
         element.name = name;
         element.id = name;
         element.max = 20;
+
+        if(type === 'date') {
+            element.min = getSystemDate();
+        }
         return element;
     }
 

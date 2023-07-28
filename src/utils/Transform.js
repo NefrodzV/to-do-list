@@ -1,3 +1,5 @@
+import getSystemDate from "./getSystemDate";
+
 export default function Transform() {
 
     function replaceElement(oldElement, elementType, type, value, callback) {
@@ -7,6 +9,7 @@ export default function Transform() {
         newElement.placeholder = "Enter new field value and press enter";
         if(type === 'date') {
             newElement.style.marginInlineStart = 'auto';
+            newElement.min = getSystemDate();
         }
         if(value === undefined) {
             newElement.value ='';
