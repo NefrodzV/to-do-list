@@ -49,7 +49,10 @@ export default function todoListComponent() {
         
         input.addEventListener('keypress', (event) => {
             if(event.key === "Enter"){
-                if((input.value.trim()).length === 0) return;
+                if((input.value.trim()).length === 0) {
+                    input.classList.add('error');
+                    return;
+                }
                 
                 let todo = createTodo(input.value);
                 events.emit('addTodo', todo);

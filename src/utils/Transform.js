@@ -8,10 +8,16 @@ export default function Transform() {
         if(type === 'date') {
             newElement.style.marginInlineStart = 'auto';
         }
-        
+        if(value === undefined) {
+            newElement.value ='';
+        }
         newElement.addEventListener('keypress', (event) => {
             if(event.key === "Enter"){
-                if((input.value.trim()).length === 0) return;
+                if((newElement.value.trim()).length === 0)  {
+                    newElement.classList.add('error');
+                    return;
+                }
+                
                 event.preventDefault();
                 callback(newElement.value);
                 event.target.blur();
