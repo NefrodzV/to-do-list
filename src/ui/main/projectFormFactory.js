@@ -1,47 +1,17 @@
 import events from "../../events";
 import createTodo from "../../data/model/createTodo";
-import inputValidator from "../layer/inputValidator";
+import inputValidator from "../../utils/inputValidator";
 import projectRepository from "../../data/repository/projectRepository";
 import formListComponent from "../listComponents/formListComponent";
+import ElementCreator from "../../utils/ElementCreator";
 
 export default function projectFormFactory() {
     let errorField = false;
-    const inputs = [];
     const todosData = [];
 
-    const createLegend = (text) => {
-        const element = document.createElement('legend');
-        element.textContent = text;
-        return element;
-    }
-
-    const createLabel = (text, inputId) => {
-        const element = document.createElement('label');
-        element.textContent = text;
-        element.htmlFor = inputId;
-        return element;
-    }
-
-    const createInput = (type, placeholderText, name)  => {
-        const element = document.createElement('input');
-        element.type = type;
-        element.placeholder = placeholderText;
-        element.name = name;
-        element.id = name;
-        element.max = 20;
-        inputs.push(element);
-        return element;
-    }
-
-    const createTextarea = (rows, placeholder, name) => {
-        const element = document.createElement('textarea');
-        element.rows = rows;
-        element.placeholder = placeholder;
-        element.name = name;
-        element.id = name;
-        return element;
-    }
-
+    // Class used to create elements
+    const elementCreator = ElementCreator();
+     // Displays error when validator finds an error
     const displayInputError = (element) => {
         errorField = true;
         element.value = ''
@@ -68,26 +38,17 @@ export default function projectFormFactory() {
 
     // Project details form part
     const projectFieldset = document.createElement('fieldset');
-    const projectLegend = createLegend('Project details');
-    
-    const projectTitleLabel = createLabel('Project title:', 'projectTitle');
-    
-    const projectTitleInput = createInput('text', 'Title', 'projectTitle');
-    
-    
-    const projectDescriptionLabel = createLabel('Project description:', 'projectDescription')
-    
-    const projectDescriptionTextarea = createTextarea(3, 'What is the project about?', 'projectDescription');
-
+    const projectLegend = elementCreator.createLegend('Project details');
+    const projectTitleLabel = elementCreator.createLabel('Project title:', 'projectTitle');
+    const projectTitleInput = elementCreator.createInput('text', 'Title', 'projectTitle');
+    const projectDescriptionLabel = elementCreator.createLabel('Project description:', 'projectDescription')
+    const projectDescriptionTextarea = elementCreator.createTextarea(
+        3, 'What is the project about?', 'projectDescription');
     projectFieldset.append(projectLegend, projectTitleLabel,projectTitleInput, projectDescriptionLabel, projectDescriptionTextarea)
     
     // Todo items form part
     const todoFieldset = document.createElement('fieldset');
-
-    const addTodoButton = document.createElement('button')
-    addTodoButton.classList.add('add-todo-button');
-    addTodoButton.textContent = '+ ADD TODO';
-    addTodoButton.type = 'button';
+    const addTodoButton = elementCreator.createButton('button', '+ ADD TODO', 'add-todo-button');
     addTodoButton.addEventListener('click', () => {
         errorField = false;
         inputValidator([todoTitleInput, todoDateInput]);
@@ -98,45 +59,34 @@ export default function projectFormFactory() {
         resetInputText(todoDescriptionTextarea);
         resetInputText(todoDateInput);
     });
-
-    const todoLegend = createLegend('Register todos');
-    
-    const todoTitleLabel = createLabel('Title:', 'todoTitle');
-    
-    const todoTitleInput = createInput('text', 'Title', 'todoTitle')
-    
-    const todoDateLabel = createLabel('Date:', 'date');
-    
-    const todoDateInput = createInput('date', null, 'date');
-    
-    const todoDescriptionLabel = createLabel('Description:', 'todoDescription');
-   
-    const todoDescriptionTextarea = createTextarea(3, 'Write a description for the todo!', 'todoDescription');
-    
+    const todoLegend = elementCreator.createLegend('Register todos');
+    const todoTitleLabel = elementCreator.createLabel('Title:', 'todoTitle');
+    const todoTitleInput = elementCreator.createInput('text', 'Title', 'todoTitle')
+    const todoDateLabel = elementCreator.createLabel('Date:', 'date');
+    const todoDateInput = elementCreator.createInput('date', null, 'date');
+    const todoDescriptionLabel = elementCreator.createLabel('Description:', 'todoDescription');
+    const todoDescriptionTextarea = elementCreator.createTextarea(
+        3, 'Write a description for the todo!', 'todoDescription');
     todoFieldset.append(todoLegend, todoTitleLabel, todoTitleInput, todoDateLabel, todoDateInput, todoDescriptionLabel, todoDescriptionTextarea, addTodoButton);
-    const todoListFieldset = document.createElement('fieldset');
-    const todoListLegend = document.createElement('legend');
-    todoListLegend.textContent = 'Todo List'
     
+    // Todo List part
+    const todoListFieldset = document.createElement('fieldset');
+    const todoListLegend = elementCreator.createLegend('Todo List');
     const listComponent = formListComponent(todosData, (title) => {
        removeFromTodosData(title);
     });
-
     const todosList = listComponent.getListElement();
-
     todosList.classList.add('todos-form-list');
-    
-    todoListFieldset.appendChild(todoListLegend);
-    todoListFieldset.appendChild(todosList);
+    todoListFieldset.append(todoListLegend, todosList);
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Submit';  
-
     const fieldsetContainer = document.createElement('div');
     fieldsetContainer.classList.add('fieldset-container');
     fieldsetContainer.append(projectFieldset, todoFieldset, todoListFieldset);
 
     form.append(formTitle, fieldsetContainer, submitButton);
 
+    // Functions
     function validate() {
         inputValidator([projectTitleInput]);
         if(!listHasItem()) {
@@ -149,7 +99,7 @@ export default function projectFormFactory() {
         }
         submit();
 
-        // Reseting form
+        // Reset form
         resetInputText(projectTitleInput);
         resetInputText(projectDescriptionTextarea);
         resetInputText(todoTitleInput);
@@ -158,7 +108,8 @@ export default function projectFormFactory() {
         listComponent.clear();
         todosData.length = 0
     }
-      
+    
+    // Span for empty
     const emptyListSpan = document.createElement('span');
     emptyListSpan.textContent = 'There are no todos! Please add one!';
     emptyListSpan.classList.add('empty-list-msg');
@@ -184,7 +135,6 @@ export default function projectFormFactory() {
         todosData.push(todo);
         // Adding to list component
         listComponent.updateList(todo);
-
     }
 
     function resetInputText(input) {
@@ -193,7 +143,7 @@ export default function projectFormFactory() {
     }
 
     function removeFromTodosData(title) {
-        for(let i = 0;i < todosData.length; i++) {
+        for(let i = 0; i < todosData.length; i++) {
             let todo = todosData[i];
             if(todo.getTitle() === title) {
                 todosData.splice(i, 1);
@@ -216,12 +166,8 @@ export default function projectFormFactory() {
     function submit() {
         let title = projectTitleInput.value;
         let description = projectDescriptionTextarea.value;
-
-        
         projectRepository.addProject(title, description, todosData);
-
         showRegistryMessage();
-
     }
     
     return form;
