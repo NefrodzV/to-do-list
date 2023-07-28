@@ -6,6 +6,7 @@ import formListComponent from "../listComponents/formListComponent";
 import ElementCreator from "../../utils/ElementCreator";
 
 export default function projectFormFactory() {
+
     let errorField = false;
     const todosData = [];
 
@@ -30,7 +31,6 @@ export default function projectFormFactory() {
         removeEmptyListMessage();
         console.log("submiting form......");
         validate();
-        
     })
 
     const formTitle = document.createElement('h1');
