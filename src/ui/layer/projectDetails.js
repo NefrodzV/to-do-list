@@ -47,7 +47,6 @@ export default function projectDetails(closeFunction) {
     const controlsContainer =  document.createElement('div');
     controlsContainer.classList.add('controls-container');
 
-    
     const addTodoButton = document.createElement('button');
     addTodoButton.classList.add('layer-add-todo-button');
     addTodoButton.textContent = '+ Add Todo';
@@ -75,6 +74,7 @@ export default function projectDetails(closeFunction) {
         description.textContent = project.getDescription();
         todosListComponent.updateList(project.getTodos());
     }
+    events.on('updateProjectFields', updateFields);
     function getDataFromSource(id) {
         project = projectRepository.getProjectWithId(id);
         console.log(project);

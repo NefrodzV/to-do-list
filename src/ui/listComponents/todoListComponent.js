@@ -85,7 +85,6 @@ export default function todoListComponent() {
 function TodoItemComponent(todo) {
     
     const transform = Transform();
-
     const STYLE = 'todo-component';
     const listItem = document.createElement('li');
     listItem.classList.add(STYLE);
@@ -94,7 +93,6 @@ function TodoItemComponent(todo) {
         console.log('clickpressed');
         deleteButton.toggleAttribute('visible');
     })
-    
 
     const titleElement = document.createElement('p');
     titleElement.textContent = todo.getTitle();
@@ -113,13 +111,14 @@ function TodoItemComponent(todo) {
 
     dateElement.addEventListener('click', () => {
         transform.replaceElement(dateElement, 'input', "date" , todo.getTitle(),  (value) => {
+            console.log('updating list');
             todo.setDate(value);
             update(dateElement, todo.getDate());
             events.emit('updateProject');
+            events.emit('updateProjectFields');
         })
     })
     
-
     const checkBoxElement = document.createElement('input');
     checkBoxElement.type = 'checkbox';
     checkBoxElement.classList.add('todo-checkbox');
