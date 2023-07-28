@@ -45,7 +45,7 @@ export default function todoListComponent() {
         
         const input = document.createElement('input');
         input.type = 'text';
-        input.placeholder = "Enter title";
+        input.placeholder = "Enter title and press enter";
         
         input.addEventListener('keypress', (event) => {
             if(event.key === "Enter"){
