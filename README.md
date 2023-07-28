@@ -1,14 +1,20 @@
 # To Do List
 
 ## Description
-Basic todo list to practice the Single Resposibility Principle of the SOLID Principles.
+Basic todo list to practice the two of the SOLID Principles. 
+SOLID principles applied:
+* Single Resposibility Principle
+* Open-Closed Principle
  
 ## Features
 
-* Creating a todo with its respectives tasks.
-* Editing the todo list.
-* Having an indicatior for the priority of the todo and its tasks like its due date.
-* Setting the state of the task if its ongoing, completed, or pastdue.
+* Creating a project with its respective todos
+* Editing, updating and removing projects
+* Editing, updating and removing todos
+* Show how many todos are completed overall
+* Using local storage to store the project 
+
+
 
 ## Built With 
 * Vanilla JS
