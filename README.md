@@ -1,7 +1,7 @@
 # To Do List
 
 ## Description
-Basic todo list to practice the two of the SOLID Principles. 
+Todo List project to practice the two of the SOLID Principles. 
 SOLID principles applied:
 * Single Resposibility Principle
 * Open-Closed Principle
