@@ -21,3 +21,5 @@ SOLID principles applied:
 * HTML 5
 * CSS3
 * Webpack 5
+
+LIVE DEMO [HERE] (https://nefrodzv.github.io/to-do-list/)
