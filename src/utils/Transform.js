@@ -4,6 +4,7 @@ export default function Transform() {
         const newElement = document.createElement(elementType);
         newElement.type = type;
         newElement.value = value;
+        newElement.placeholder = "Enter new field value";
         if(type === 'date') {
             newElement.style.marginInlineStart = 'auto';
         }
@@ -16,7 +17,7 @@ export default function Transform() {
             }
         });
 
-        newElement.addEventListener('focusout', (event) => {
+        newElement.addEventListener('focusout', () => {
             undoTransform(newElement, oldElement);
         });
     
