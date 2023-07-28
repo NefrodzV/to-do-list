@@ -56,7 +56,6 @@ header {
 
 /* Sidebar */
 .sidebar {
-
     padding: 1rem;
     background-color: var(--sidebar-color);
 }
@@ -151,6 +150,7 @@ main {
 }
 
 .delete-item-button {
+    cursor: pointer;
     border-radius: 5px;
     width: 25px;
     height: 25px;
@@ -170,13 +170,7 @@ main {
     height: 100%;
 }
 
-.delete-item-button[visible] {
-    display: block;
-    width: 25px;
-    height: 25px;
-    font-size: 100%;
-    accent-color: red;
-}
+
 
 .controls-container {
     position: absolute;
@@ -197,11 +191,13 @@ main {
 }
 
 .layer-title {
+    cursor: pointer;
     color: var(--primary-text-color);
     font-size: 2rem;
     font-weight: 900;
 }
 .layer-description {
+    cursor: pointer;
     color: var(--primary-text-color);
     font-size: .8rem;
 }
@@ -216,6 +212,7 @@ main {
     border-radius: 5px;
 }
 .todo-component-title {
+    cursor: pointer;
     text-transform: capitalize;
     width: 400px;
     margin: 0;
@@ -223,6 +220,7 @@ main {
 }
 
 .todo-component-date {
+    cursor: pointer;
     margin: 0;
     margin-inline: auto;
     font-size: .8rem;
