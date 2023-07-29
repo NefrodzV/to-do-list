@@ -1,4 +1,4 @@
-import Formatter from "../../utils/Formatter";
+import Formatter from "../../utils/Formatter"
 
 export default function createTodo(
   title,
@@ -12,38 +12,38 @@ export default function createTodo(
       description,
       date,
       completeState,
-    };
-  };
+    }
+  }
 
   const toJSON = () => {
-    return getObject();
-  };
+    return getObject()
+  }
   return {
     toJSON,
     getTitle() {
-      return title;
+      return title
     },
     getDescription() {
-      return description;
+      return description
     },
     getDate() {
-      if (date === "No date set") return date;
-      return Formatter().formatDate(date);
+      if (date === "No date set") return date
+      return Formatter().formatDate(date)
     },
     getCompleteState() {
-      return completeState;
+      return completeState
     },
     setTitle(value) {
-      title = value;
+      title = value
     },
     setDescription(value) {
-      description = value;
+      description = value
     },
     setDate(value) {
-      date = value;
+      date = value
     },
     updateCompleteState(boolean) {
-      completeState = boolean;
+      completeState = boolean
     },
-  };
+  }
 }

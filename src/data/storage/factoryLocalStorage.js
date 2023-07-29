@@ -1,74 +1,74 @@
-import createProject from "../model/createProject";
-import createTodo from "../model/createTodo";
+import createProject from "../model/createProject"
+import createTodo from "../model/createTodo"
 
 export default function factoryLocalStorage() {
-  const storage = window["localStorage"];
+  const storage = window["localStorage"]
 
   const add = (project) => {
-    let index = storage.length;
+    let index = storage.length
 
-    let projectJSON = JSON.stringify(project);
+    let projectJSON = JSON.stringify(project)
 
-    storage.setItem(index, projectJSON);
-  };
+    storage.setItem(index, projectJSON)
+  }
 
   const updateProject = (project) => {
-    let projectJson = JSON.stringify(project);
-    storage.setItem(project.getId(), projectJson);
-  };
+    let projectJson = JSON.stringify(project)
+    storage.setItem(project.getId(), projectJson)
+  }
 
   const getAll = () => {
-    const projects = [];
+    const projects = []
     for (let i = 0; i < storage.length; i++) {
-      let projectJson = storage[i];
-      let obj = JSON.parse(projectJson);
+      let projectJson = storage[i]
+      let obj = JSON.parse(projectJson)
 
-      let todos = [];
+      let todos = []
       for (let i = 0; i < obj.todos.length; i++) {
-        let todoObj = obj.todos[i];
+        let todoObj = obj.todos[i]
         let todo = createTodo(
           todoObj.title,
           todoObj.description,
           todoObj.date,
           todoObj.completeState
-        );
-        todos.push(todo);
+        )
+        todos.push(todo)
       }
-      let project = createProject(obj.id, obj.title, obj.description, todos);
+      let project = createProject(obj.id, obj.title, obj.description, todos)
 
-      projects.push(project);
+      projects.push(project)
     }
-    return projects;
-  };
+    return projects
+  }
 
   // localStorage.clear();
   const getProjectWithId = (id) => {
-    let projectJSON = storage.getItem(id);
-    let obj = JSON.parse(projectJSON);
+    let projectJSON = storage.getItem(id)
+    let obj = JSON.parse(projectJSON)
 
-    let todos = [];
+    let todos = []
     for (let i = 0; i < obj.todos.length; i++) {
-      let todoObj = obj.todos[i];
+      let todoObj = obj.todos[i]
       let todo = createTodo(
         todoObj.title,
         todoObj.description,
         todoObj.date,
         todoObj.completeState
-      );
-      todos.push(todo);
+      )
+      todos.push(todo)
     }
 
-    let project = createProject(obj.id, obj.title, obj.description, todos);
-    return project;
-  };
+    let project = createProject(obj.id, obj.title, obj.description, todos)
+    return project
+  }
 
   const getLastId = () => {
-    return storage.length;
-  };
+    return storage.length
+  }
 
   const removeProject = (identifier) => {
-    storage.removeItem(identifier.toString());
-  };
+    storage.removeItem(identifier.toString())
+  }
 
   return {
     add,
@@ -77,5 +77,5 @@ export default function factoryLocalStorage() {
     getLastId,
     getProjectWithId,
     removeProject,
-  };
+  }
 }

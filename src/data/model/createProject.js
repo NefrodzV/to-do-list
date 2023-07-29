@@ -1,48 +1,48 @@
-import CompleteTodosCounter from "../../utils/CompleteTodoCounter";
-import Sorter from "../../utils/Sorter";
-import { TodoMatcher } from "../../utils/TodoMatcher";
+import CompleteTodosCounter from "../../utils/CompleteTodoCounter"
+import Sorter from "../../utils/Sorter"
+import { TodoMatcher } from "../../utils/TodoMatcher"
 
 export default function createProject(id, title, description, todos) {
   const getCompletedTodosTotal = () => {
-    let completed = CompleteTodosCounter().getTotal(todos);
-    let total = todos.length;
-    return `${completed}/${total}`;
-  };
+    let completed = CompleteTodosCounter().getTotal(todos)
+    let total = todos.length
+    return `${completed}/${total}`
+  }
   const getId = () => {
-    return id;
-  };
+    return id
+  }
 
   const getTitle = () => {
-    return title;
-  };
+    return title
+  }
 
   const getDescription = () => {
-    return description;
-  };
+    return description
+  }
 
   const getTodos = () => {
     if (todos.length > 1) {
-      Sorter().sortByDate(todos);
+      Sorter().sortByDate(todos)
     }
-    return todos;
-  };
+    return todos
+  }
 
   // For serializing
   const getObject = () => {
-    return { id, title, description, todos };
-  };
+    return { id, title, description, todos }
+  }
   const toJSON = () => {
-    return getObject();
-  };
+    return getObject()
+  }
   const addTodo = (todo) => {
-    todos.push(todo);
-  };
+    todos.push(todo)
+  }
 
   const deleteTodo = (todo) => {
-    let indexMatch = TodoMatcher().findTodoByTitle(todo, todos);
-    if (indexMatch === null) return;
-    todos.splice(indexMatch, 1);
-  };
+    let indexMatch = TodoMatcher().findTodoByTitle(todo, todos)
+    if (indexMatch === null) return
+    todos.splice(indexMatch, 1)
+  }
 
   return {
     toJSON,
@@ -51,13 +51,13 @@ export default function createProject(id, title, description, todos) {
     getTitle,
     getTodos,
     setTitle(value) {
-      title = value;
+      title = value
     },
     setDescription(value) {
-      description = value;
+      description = value
     },
     addTodo,
     deleteTodo,
     getCompletedTodosTotal,
-  };
+  }
 }
