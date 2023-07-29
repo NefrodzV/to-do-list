@@ -8,7 +8,6 @@ export default function Sorter() {
         firstItem.getDate() === "No date set" &&
         secondItem !== "No date set"
       ) {
-        S
         return 1
       }
       return compareAsc(
