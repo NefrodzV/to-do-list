@@ -1,4 +1,4 @@
-import { compareAsc, parseISO } from "date-fns"
+import { compareAsc } from "date-fns"
 
 export default function Sorter() {
   const sortByDate = (items) => {
@@ -8,7 +8,7 @@ export default function Sorter() {
         firstItem.getDate() === "No date set" &&
         secondItem !== "No date set"
       ) {
-        console.log("No date set")
+        S
         return 1
       }
       return compareAsc(
@@ -16,9 +16,6 @@ export default function Sorter() {
         new Date(secondItem.getDate())
       )
     })
-    for (let i = 0; i < items.length; i++) {
-      console.log(items[i].getDate())
-    }
   }
 
   return {
